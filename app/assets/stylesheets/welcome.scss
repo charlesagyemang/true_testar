@@ -1,0 +1,10 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.banner2{
+  padding: 100px 0;
+  color: #f8f8f8;
+  background: url(image_path('banner-bg.jpg')) no-repeat center center;
+  background-size: cover;
+}
