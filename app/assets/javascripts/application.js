@@ -17,12 +17,12 @@
 
 $( document ).ready(function() {
 
-  $.ajax({
-      url: 'https://murmuring-brushlands-16499.herokuapp.com/users.json',
-      dataType: 'json',
-      cache: false,
-      success: function (data) {
-          console.log(data);
-        }
-    });
+  // $.ajax({
+  //     url: 'https://murmuring-brushlands-16499.herokuapp.com/users.json',
+  //     dataType: 'json',
+  //     cache: false,
+  //     success: function (data) {
+  //         console.log(data);
+  //       }
+  //   });
 });
