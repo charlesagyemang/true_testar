@@ -1,33 +1,51 @@
-<div class="col-md-6">
+<a name="services"></a>
+  <div class="content-section-a">
 
-  <h2 class="pops">Log in</h2>
+      <div class="container">
 
-  <div class="col-md-6">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      <div class="field">
-        <%= f.label :email, class: "pops" %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          <div class="row">
+              <div class="col-lg-5 col-sm-6">
+
+                  <div class="col-md-12">
+                    <h2 class="section-heading">Log In With Your Details</h2>
+                    <div class="col-md-9">
+
+                      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <%= devise_error_messages! %>
+                        <div class="field">
+                          <%= f.label :email %><br />
+                          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                        </div>
+
+
+                        <div class="form-group">
+                          <%= f.label :password %><br />
+                          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                        </div>
+
+                        <% if devise_mapping.rememberable? -%>
+                          <div class="fform-group">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me %>
+                          </div>
+                        <% end %>
+
+                        <div class="form-group">
+                          <%= f.submit "Log in", class: "btn btn-primary" %>
+                        </div>
+                      <% end %>
+
+                      <%= render "devise/shared/links" %>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                  <img class="img-responsive" src="<%= asset_path( 'logotestar.png' ) %>" alt="">
+              </div>
+          </div>
+
       </div>
+      <!-- /.container -->
 
-
-      <div class="form-group">
-        <%= f.label :password, class: "pops" %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div class="fform-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, class: "pops"%>
-        </div>
-      <% end %>
-
-      <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
   </div>
-</div>
+  <!-- /.content-section-a -->

@@ -1,39 +1,53 @@
-<div class="col-md-6">
+<a name="services"></a>
+  <div class="content-section-a">
 
-    <h2 class="pops">Sign up</h2>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-5 col-sm-9">
+                <div class="col-md-9">
+
+                      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= devise_error_messages!%>
+
+                      <div class="col-md-12">
+                        <h2>Sign up</h2>
+                        <div class="form-group">
+                          <%= f.label :email%><br />
+                          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                        </div>
+
+
+                          <div class="form-group">
+                            <%= f.label :password%>
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                            <% end %><br />
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control"%>
+                          </div>
 
 
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-   <%= devise_error_messages!%>
+                        <div class="form-group">
+                          <%= f.label :password_confirmation%><br />
+                          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+                        </div>
 
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= f.label :email, class: "pops"%><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+
+                        <div class="form-group">
+                          <%= f.submit "Sign up", class: "btn btn-primary" %>
+                        </div>
+                        <%= render "devise/shared/links" %>
+                    </div>
+                    <% end %>
+                  </div>
+              </div>
+              <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                  <img class="img-responsive" src="<%= asset_path( 'logotestar.png' ) %>" alt="">
+              </div>
+          </div>
+
       </div>
+      <!-- /.container -->
 
-
-        <div class="form-group">
-          <%= f.label :password, class: "pops"%>
-          <% if @minimum_password_length %>
-          <em class="pops">(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", class: "form-control"%>
-        </div>
-
-
-
-      <div class="form-group">
-        <%= f.label :password_confirmation, class: "pops" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-      </div>
-
-
-      <div class="form-group">
-        <%= f.submit "Sign up", class: "btn btn-primary" %>
-      </div>
-      <%= render "devise/shared/links" %>
   </div>
-  <% end %>
-</div>
+  <!-- /.
