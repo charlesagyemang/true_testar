@@ -8,7 +8,6 @@
   </head>
 
   <body>
-
   		<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,28 +19,29 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <%= link_to "True testar", {controller: "welcome", action: "index"}, class:"navbar-brand topnav" %>
-
+                <%= link_to "True testar",  root_path,  class:"navbar-brand topnav" %>
+                <!-- <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p> -->
 
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <%= link_to "About Us", {controller: "about", action: "index"} %>
+                          <%= link_to "About Us", about_index_path,   class:"navbar-brand topnav" %>
                     </li>
                     <li>
-                        <a href="#services">Log In</a>
+                          <%= link_to "Log In", new_user_session_path,   class:"navbar-brand topnav" %>
                     </li>
                     <li>
-                        <%= link_to "Contact Us", {controller: "contact", action: "index"} %>
+                        <%= link_to "Contact Us", contact_index_path, class:"navbar-brand topnav" %>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-    </nav>
+    </nav><br /><br />
 
     <%= yield %>
 
