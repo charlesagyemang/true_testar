@@ -30,9 +30,16 @@
                     <li>
                           <%= link_to "About Us", about_index_path,   class:"navbar-brand topnav" %>
                     </li>
-                    <li>
-                          <%= link_to "Log In", new_user_session_path,   class:"navbar-brand topnav" %>
-                    </li>
+                    <% if current_user %>
+                      <li>
+                            <%= link_to "Log Out", destroy_user_session_path, :method => :delete, class:"navbar-brand topnav" %>
+                      </li>
+                    <% else %>
+                      <li>
+
+                            <%= link_to "Log In", new_user_session_path,   class:"navbar-brand topnav" %>
+                      </li>
+                    <% end %>
                     <li>
                         <%= link_to "Contact Us", contact_index_path, class:"navbar-brand topnav" %>
                     </li>
