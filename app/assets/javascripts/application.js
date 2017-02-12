@@ -14,15 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$( document ).ready(function() {
-
-  // $.ajax({
-  //     url: 'https://murmuring-brushlands-16499.herokuapp.com/users.json',
-  //     dataType: 'json',
-  //     cache: false,
-  //     success: function (data) {
-  //         console.log(data);
-  //       }
-  //   });
-});
