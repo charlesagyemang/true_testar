@@ -7,12 +7,10 @@
                 <div class="col-lg-12">
                     <div class="intro-message">
                         <h1>True Testar</h1>
-                        <h3>
-                          A Crowdsourced Testing For Your Products.<br />
-                        </h3>
-                        <h4>
-                          get the real user experience and feedback
-                        </h4>
+                        <center><h3>
+                          A crowdsourced testing for your products<br />
+                          Get the real user experience and feedback
+                        </h3></center>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                            <% if current_user %>
@@ -29,13 +27,13 @@
                                   <!-- <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-thermometer-three-quarters"></i> <span class="network-name">Sign Up As A Tester</span></a> -->
                                   <!-- <%= link_to "Sign Up As Tester", {controller: "welcome", action: "index"},  class: "btn btn-default btn-lg"%> -->
                                     <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
-                                      <i class="fa fa-flask"></i> Sign Up As A Tester
+                                      <i class="fa fa-user-plus"></i> Sign Up As A Tester
                                     <% end %>
 
                               </li>
                               <li>
                                   <%= link_to root_path, class: "btn btn-default btn-lg" do %>
-                                    <i class="fa fa-github fa-fw"></i> Create A Test
+                                    <i class="fa fa-thermometer-three-quarters fa-fw"></i> Create A Test
                                   <% end %>
                               </li>
 
@@ -63,48 +61,210 @@
 
     <!-- Page Content -->
 
-	<a name="services"></a>
-    <div class="content-section-a">
+
+    <div class="container">
+           <div class="row"></div>
+           <h1 class="center shade_three_on">What we do</h1>
+               <div class="row center">
+                   <div class="col-lg-4 col-sm-6">
+                       <hr class="shade_one">
+                       <div class="clearfix"></div>
+                       <h2 class="section-heading">Localized testing</h2>
+                       <i class="fa fa-globe shade_three_on" style="font-size:120px;"></i><br>
+                       <p class="lead">Ensure your product is adaptable to the target market.Equates to a market research and gives early adopters from your target market</p>
+
+                   </div>
+                   <div class="col-lg-4 col-sm-6">
+                       <hr class="shade_one">
+                       <div class="clearfix"></div>
+                       <h2 class="section-heading">Compatibility testing</h2>
+                      <i class="fa fa-link shade_three_on" style="font-size:120px;"></i><br>
+                       <p class="lead">Devices are growing more than ever. With our community you test your software on different range of devices and OS platforms, solving the issue with fragmentation</p>
+                   </div>
+                   <center>
+                   <div class="col-lg-4 col-sm-6">
+                       <hr class="shade_one">
+                       <div class="clearfix"></div>
+                       <h2 class="section-heading">Usability testing</h2>
+
+                       <!-- <img class="img-responsive" src="<%= asset_path( 'usability.png' ) %>" alt=""> -->
+                       <i class="fa fa-desktop shade_three_on" style="font-size:120px;"></i>
+                       <p class="lead">It's hard to find real users for new products. Our curated community has a wide range of customers who provide feedback on how they feel about your product.</p>
+
+                   </div>
+                 </center>
+               </div>
+
+           </div>
+           <!-- /.container -->
+
+
+
+
+      <div class="shade_three">
+        <div class="container">
+          <h1 class="center white_moon">How this works</h1>
+          <div class="row center">
+             <div class="col-lg-4 col-sm-6 ">
+                 <hr class="center">
+                 <div class="clearfix"></div>
+                 <h2 class="section-heading white_moon">Sign up as a tester</h2>
+                 <i class="fa fa-user-plus white_moon" style="font-size:120px;"></i><br>
+                 <p class="lead white_moon">A tester signs up to take a test, stating their interestes and we recommend tests to them</p>
+                 <p>
+                   <% if current_user %>
+                     <p>
+                       <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
+                         <i class="fa fa-user"></i> View Your Dashboard
+                       <% end %>
+                     </p>
+                   <% else %>
+                       <%= link_to userdash_index_path, class: "btn btn-default btn-lg" do %>
+                         <i class="fa fa-user-plus"></i> Sign Up As A Tester
+                       <% end %>
+                   <% end %>
+                </p>
+             </div>
+
+           <div class="col-lg-4 col-sm-6">
+               <hr class="shade_one">
+               <div class="clearfix"></div>
+               <h2 class="section-heading white_moon">Test products</h2>
+              <i class="fa fa-flag white_moon" style="font-size:120px;"></i><br>
+               <p class="lead white_moon">Tester tests product and provides feedback according to the task specified</p>
+               <p>
+                 <% if current_user %>
+                   <p>
+                     <%= link_to userdash_index_path, class: "btn btn-default btn-lg" do %>
+                       <i class="fa fa-flask"></i> View On Going Tests
+                     <% end %>
+                   </p>
+                 <% else %>
+                     <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
+                       <i class="fa fa-flask"></i> Test A Product
+                     <% end %>
+                 <% end %>
+              </p>
+           </div>
+           <center>
+           <div class="col-lg-4 col-sm-6">
+               <hr class="shade_one">
+               <div class="clearfix"></div>
+               <h2 class="section-heading white_moon">Receive a report</h2>
+
+               <!-- <img class="img-responsive" src="<%= asset_path( 'usability.png' ) %>" alt=""> -->
+               <i class="fa fa-desktop white_moon" style="font-size:120px;"></i>
+               <p class="lead white_moon">We aggregate all feedback and provide you a detailed report at a fee</p><br />
+               <p>
+                 <% if current_user %>
+                   <p>
+                     <%= link_to userdash_index_path, class: "btn btn-default btn-lg" do %>
+                       <i class="fa fa-building"></i> View Company DashBoard
+                     <% end %>
+                   </p>
+                 <% else %>
+                     <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
+                       <i class="fa fa-building"></i> Register As A Company
+                     <% end %>
+                 <% end %>
+              </p>
+
+           </div>
+             </center>
+            </div>
+          </div>               <!-- /.container -->
+      </div>
+
+
+
+
+      <div class="container">
+             <div class="row"></div>
+             <h1 class="center shade_three_on">Are you a product owner who needs testing? This is why you should use True Testar</h1>
+                 <div class="row center">
+                     <div class="col-lg-3 col-sm-6">
+                         <hr class="shade_one">
+                         <div class="clearfix"></div>
+                         <h2 class="section-heading">Agility</h2>
+                         <i class="fa fa-align-center shade_three_on" style="font-size:120px;"></i><br>
+                         <p class="lead">Ensure your product is adaptable to the target market.Equates to a market research and gives early adopters from your target market</p>
+
+                     </div>
+                     <div class="col-lg-3 col-sm-6">
+                         <hr class="shade_one">
+                         <div class="clearfix"></div>
+                         <h2 class="section-heading">Platforms</h2>
+                        <i class="fa fa-renren shade_three_on" style="font-size:120px;"></i><br>
+                         <p class="lead">Devices are growing more than ever. With our community you test your software on different range of devices and OS platforms, solving the issue with fragmentation</p>
+                     </div>
+                     <center>
+                     <div class="col-lg-3 col-sm-6">
+                         <hr class="shade_one">
+                         <div class="clearfix"></div>
+                         <h2 class="section-heading">Fast</h2>
+
+                         <!-- <img class="img-responsive" src="<%= asset_path( 'usability.png' ) %>" alt=""> -->
+                         <i class="fa fa-fighter-jet shade_three_on" style="font-size:120px;"></i>
+                         <p class="lead">It's hard to find real users for new products. Our curated community has a wide range of customers who provide feedback on how they feel about your product.</p>
+
+                     </div>
+
+                     <div class="col-lg-3 col-sm-6">
+                         <hr class="shade_one">
+                         <div class="clearfix"></div>
+                         <h2 class="section-heading">Experts</h2>
+
+                         <!-- <img class="img-responsive" src="<%= asset_path( 'usability.png' ) %>" alt=""> -->
+                         <i class="fa fa-user-md shade_three_on" style="font-size:120px;"></i>
+                         <p class="lead">It's hard to find real users for new products. Our curated community has a wide range of customers who provide feedback on how they feel about your product.</p>
+
+                     </div>
+
+                   </center>
+                 </div>
+
+             </div>
+             <!-- /.container -->
+
+
+
+
+    <div class="content-section-b shade_three">
 
         <div class="container">
-          <center><h2 class="section-heading">What We Do</h2></center>
+
             <div class="row">
-                <center>
-                <div class="col-sx-3 col-sm-4">
-                  <hr >
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Localized Testing</h2><br />
-                    <img class="img-responsive" src="<%= asset_path( 'testpix1.jpg' ) %>" alt=""><br />
-                    <p class="lead">
-                        Ensure your product is adabtable to the target market. Equates to a market research
-                        and gives early adaptors from your target market
-                    </p>
+                    <h2 class="section-heading white_moon">Usability, Functionality and Market Feedback</h2>
+                    <p class="lead white_moon">We deliver genuine opinion and feedback from real human beings who have interaced with your product and reviewed it</p>
                 </div>
-                </center>
-                  <center>
-                <div class="col-sx-6  col-sm-4">
-                  <hr >
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="<%= asset_path( 'usabilty.jpg' ) %>" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a ">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Compatibility Testing</h2><br />
-                    <img class="img-responsive" src="<%= asset_path( 'testpix4.png' ) %>" alt=""><br />
-                    <p class="lead">
-                        The device and software indutry is fast growing. With our well selected community, you get to test
-                        your software on different range of devices and OS platforms, solving the issue with fragmentation
-                    </p>
+                    <h2 class="section-heading">Instant<br>Receive Feedback In Days</h2>
+                    <p class="lead">We give you value for your money. Well formatted test results with useful insights that can help you achieve your desired results in just a matter of a few days </p>
                 </div>
-                </center>
-                <center>
-                <div class="col-sx-3 col-sm-4">
-                  <hr>
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Usability Testing</h2>
-                    <img class="img-responsive" src="<%= asset_path( 'testpix6.png' ) %>" alt=""><br />
-                    <p class="lead">
-                      It's hard to find real users for your products. Our curated community has a wide range of customers
-                      who will provide you with actionable feedback on how they feel about your product
-                    </p>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="<%= asset_path( 'feedback.jpg' )%>" alt="">
                 </div>
-                </center>
             </div>
 
         </div>
@@ -113,112 +273,33 @@
     </div>
     <!-- /.content-section-a -->
 
-    <a name="services"></a>
-      <div class="content-section-a">
+    <!-- /.content-section-a -->
 
-          <div class="container">
-            <center><h2 class="section-heading">How This Works</h2></center>
-              <div class="row">
-                <center>
-                  <div class="col-sx-3 col-sm-4">
-                    <hr >
-                      <div class="clearfix"></div>
-                      <h2 class="section-heading">Sign Up As A Tester</h2>
-                      <img class="img-responsive" src="<%= asset_path( 'signup.png' ) %>" alt=""><br />
-                      <p class="lead">
-                          A Tester signs up and creates a profile according to their interests.
-                          We suggest test to you on your dashboard according to what you chose
-                      </p>
-                  </div>
-                </center>
-                  <center>
-                    <div class="col-sx-6  col-sm-4">
-                      <hr >
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Test Products</h2>
-                        <img class="img-responsive" src="<%= asset_path( 'testproduct2.png' ) %>" alt="" width="180", height="100"><br />
-                        <p class="lead">
-                            Tester tests product and provides feedback according to the task specified
-                        </p>
-                    </div>
-                </center>
-                  <center>
-                  <div class="col-sx-3 col-sm-4">
-                    <center><hr ></center>
-                      <div class="clearfix"></div>
-                      <h2 class="section-heading">Receive A Report</h2>
-                      <img class="img-responsive" src="<%= asset_path( 'report.png' ) %>" alt="" width="190", height="100"><br />
-                      <p class="lead">
-                        We aggregate all feedback and provide you a detailed report at a fee
-                      </p>
-                  </div>
-                </center>
-              </div>
+    <div class="content-section-b shade_three">
 
-          </div>
-          <!-- /.container -->
+        <div class="container">
 
-      </div>
-      <!-- /.content-section-a -->
-
-    <a name="services"></a>
-      <div class="content-section-a">
-
-          <div class="container">
-            <center><h2 class="section-heading">
-              Are you a product owner who needs testing? This is why you should use True Testar
-            </h2></center>
-              <div class="row">
-                <center>
-                  <div class="col-sx-3 col-sm-3">
-                    <hr >
-                      <div class="clearfix"></div>
-                      <h2 class="section-heading">Agility</h2>
-                      <img class="img-responsive" src="<%= asset_path( 'testpix3.png' ) %>" alt="" width="180", height="100"><br />
-                      <center><p class="lead">
-                          Drive continuous improvement on product
-                      </p>
-                  </div>
-                  </center>
-                  <center>
-                  <div class="col-sx-6  col-sm-3">
-                    <hr >
-                      <div class="clearfix"></div>
-                      <h2 class="section-heading">Platforms</h2>
-                      <img class="img-responsive" src="<%= asset_path( 'community.png' ) %>" alt="" width="180", height="100"><br />
-                      <p class="lead">
-                          Vast and diverse community and environments
-                      </p>
-                  </div>
-                </center>
-
-                  <center>
-                  <div class="col-sx-6 col-sm-3">
-                  <hr >
-                      <div class="clearfix"></div>
-                      <h2 class="section-heading">Fast</h2>
-                      <img class="img-responsive" src="<%= asset_path( 'testpix5.png' ) %>" alt="" width="190", height="100"><br />
-                      <p class="lead">
-                        Perform tasks quickly and effectively
-                      </p>
-                  </div>
-                </center>
-
-                <center>
-                <div class="col-sx-3 col-sm-3">
-                <hr >
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Experts</h2><br />
-                    <img class="img-responsive" src="<%= asset_path( 'testpix7.jpg' ) %>" alt="" width="190", height="100"><br />
-                    <p class="lead">
-                      Access to our curated community of testars
-                    </p>
+                    <h2 class="section-heading white_moon">Crowd-Sourced Testing<br /> Massive Testing Community</h2>
+                    <p class="lead white_moon">Tap into our vast and well diverse community to understand the way customers see your product and take decisions on their feedback</p>
                 </div>
-              </center>
-              </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="<%= asset_path( 'crowd.jpg' ) %>" alt="">
+                </div>
+            </div>
 
-          </div>
-          <!-- /.container -->
+        </div>
+        <!-- /.container -->
 
-      </div>
-      <!-- /.content-section-a -->
+        <!-- <script src="https://cdn.smooch.io/smooch.min.js"></script>
+        <script>
+          Smooch.init({ appToken: 'dh3jt17nxehqty9z4hdrdxcjn' });
+        </script> -->
+    </div>
+    <!-- /.content-section-b -->
+
+
+      <!-- Contact section-->
