@@ -8,10 +8,15 @@
 
 <br /><br />
 <!-- nav bar -->
-
+<!-- <%= controller_name %> -->
 
     <div class="col-sm-3">
-        <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_name %></a><h4>
+
+          <% if get_firstname.length > 0 %>
+            <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_firstname %></a><h4>
+          <% else %>
+              <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_name %></a><h4>
+          <% end %>
 
         <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
             <li class="">
@@ -20,13 +25,13 @@
                 </a>
             </li>
             <li>
-                <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i>Announcements</a>
+                <a href=""><i class="fa fa-envelope-o"></i>Announcements</a>
             </li>
             <li>
                 <a href="#up_coming_tests"><i class="fa fa-certificate"></i> Up Coming Tests<span class="label label-info pull-right inbox-notification">1</span></a>
             </li>
             <li>
-                <a href="#">
+                <a href="">
                     <i class="fa fa-users"></i> Community
                 </a>
             </li>
@@ -37,11 +42,11 @@
             </li>
         </ul><!-- /.nav -->
 
-        <h4 class="nav-email-subtitle">More</h4>
+        <h4 class="nav-email-subtitle">Points</h4>
         <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
             <li>
                 <a href="#">
-                    <i class="fa fa-credit-card"></i> My Points  <span class="label label-danger pull-right">3</span>
+                    <i class="fa fa-credit-card"></i> My Points  <span class="label label-danger pull-right"></span>
                 </a>
             </li>
             <li>
@@ -55,7 +60,28 @@
                 </a>
             </li>
         </ul><!-- /.nav -->
+
+        <h4 class="nav-email-subtitle">Testing Profile</h4>
+        <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+            <li>
+                <a href="#">
+                    <i class="fa fa-gamepad"></i> My Testing Preferences  <span class="label label-danger pull-right"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-binoculars"></i> Testing Expertise
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-cog"></i> Device and OS Specifications
+                </a>
+            </li>
+        </ul><!-- /.nav -->
     </div>
+
+
     <div class="col-sm-9">
 
         <!-- resumt -->
@@ -81,7 +107,7 @@
                               <li class="list-group-item">Status: Certified Testar</li>
                               <li class="list-group-item"><i class="fa fa-envelope"></i> <%= get_email %></li>
 
-                          
+
 
                            </ul>
                         </div>
@@ -127,7 +153,7 @@
                           <img class="img-responsive" src="<%= asset_path( 'airfreshner.jpg' ) %>" alt="">
                       </div>
                       <div id="yep">
-                        <a id="json" href="">here</a>
+                        <a id="json" href=""></a>
                       </div>
                   </div>
                   <!-- Change the width and height values to suit you best -->
