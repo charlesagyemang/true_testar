@@ -1,0 +1,70 @@
+<div class="col-sm-3">
+
+      <% if get_firstname.length > 0 %>
+        <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_firstname %></a><h4>
+      <% else %>
+          <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_name %></a><h4>
+      <% end %>
+
+    <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
+        <li class="">
+            <a href="#on_going_tester">
+                <i class="fa fa-flask"></i>  On Going Tests <span class="label label-info pull-right inbox-notification">1</span>
+            </a>
+        </li>
+        <li>
+            <a href=""><i class="fa fa-envelope-o"></i>Announcements</a>
+        </li>
+        <li>
+            <a href="#up_coming_tests"><i class="fa fa-certificate"></i> Up Coming Tests<span class="label label-info pull-right inbox-notification">1</span></a>
+        </li>
+        <li>
+            <a href="">
+                <i class="fa fa-users"></i> Community
+            </a>
+        </li>
+        <li>
+            <%= link_to userdash_profile_path  do%>
+              <i class="fa fa-user"></i> Profile
+            <% end %>
+        </li>
+    </ul><!-- /.nav -->
+
+    <h4 class="nav-email-subtitle">Points</h4>
+    <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+        <li>
+            <a href="#">
+                <i class="fa fa-credit-card"></i> My Points  <span class="label label-danger pull-right"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-money"></i> Redeem Points
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-reply"></i> Refer A Friend
+            </a>
+        </li>
+    </ul><!-- /.nav -->
+
+    <h4 class="nav-email-subtitle">Testing Profile</h4>
+    <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+        <li>
+            <a href="#">
+                <i class="fa fa-gamepad"></i> My Testing Preferences  <span class="label label-danger pull-right"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-binoculars"></i> Testing Expertise
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-cog"></i> Device and OS Specifications
+            </a>
+        </li>
+    </ul><!-- /.nav -->
+</div>
