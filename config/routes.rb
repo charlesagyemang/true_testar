@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 
 
 
+  get 'register_as_company/login'
+
+  get 'register_as_company/signup'
+
+  get 'compdash/index'
+
   get 'userdash/index'
+  get 'userdash/profile'
 
   devise_for :users, controllers: { registrations: "registrations" }
   root 'welcome#index'

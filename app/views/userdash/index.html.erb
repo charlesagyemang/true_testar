@@ -6,10 +6,10 @@
   <% end %> <br /> <br />
 </center> -->
 
-<br />
+<br /><br />
 <!-- nav bar -->
-<div class="container">
-<div class="row">
+
+
     <div class="col-sm-3">
         <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_name %></a><h4>
 
@@ -30,7 +30,11 @@
                     <i class="fa fa-users"></i> Community
                 </a>
             </li>
-            <li><a href="#"> <i class="fa fa-user"></i> Profile </a></li>
+            <li>
+                <%= link_to userdash_profile_path  do%>
+                  <i class="fa fa-user"></i> Profile
+                <% end %>
+            </li>
         </ul><!-- /.nav -->
 
         <h4 class="nav-email-subtitle">More</h4>
@@ -65,30 +69,7 @@
                            </figure>
                            <div class="row">
                               <div class="col-xs-12 social-btns">
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-google">
-                                    <i class="fa fa-google"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-facebook">
-                                    <i class="fa fa-facebook"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-twitter">
-                                    <i class="fa fa-twitter"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-linkedin">
-                                    <i class="fa fa-linkedin"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-github">
-                                    <i class="fa fa-github"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-stackoverflow">
-                                    <i class="fa fa-stack-overflow"></i> </a>
-                                 </div>
+
                               </div>
 
 
@@ -96,16 +77,19 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                            <ul class="list-group">
-                              <li class="list-group-item">Name: <%= get_name %></li>
+                              <li class="list-group-item">Name: <%= get_fullname %></li>
                               <li class="list-group-item">Status: Certified Testar</li>
                               <li class="list-group-item"><i class="fa fa-envelope"></i> <%= get_email %></li>
+
+                          
+
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
                <div class="bs-callout bs-callout-danger">
-                  <h2><strong> <%= get_name %>!! </strong> Wanna know How This Thing Works?</h2>
+                  <h2><strong> <%= get_firstname %>!! </strong> Wanna know How This Thing Works?</h2>
                   <p>
                     Charlie check out how it works in the video below.
                   </p>
@@ -118,7 +102,7 @@
                       <div class="col-lg-5 col-sm-6">
                           <hr class="section-heading-spacer">
                           <div class="clearfix"></div>
-                          <h4 class="section-heading">AF-Radio UX Test Running From Now Till 15th February</h4>
+                          <h4 class="section-heading">AF-Radio UX Test Running From Now Till 20th February</h4>
                           <p class="lead">Be one of the lucky ones to have this great opportunity to test this great product. Read the instructions
                             <strong> <a href="http://bit.ly/afradiotest">here</a></strong> and click <Strong><a href="http://join.deathtothestockphoto.com/">here</a></strong> to begin</p>
 
@@ -142,6 +126,9 @@
                       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                           <img class="img-responsive" src="<%= asset_path( 'airfreshner.jpg' ) %>" alt="">
                       </div>
+                      <div id="yep">
+                        <a id="json" href="">here</a>
+                      </div>
                   </div>
                   <!-- Change the width and height values to suit you best -->
                   <p>
@@ -150,9 +137,9 @@
                     <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"><a href="https://www.typeform.com/examples/forms/registration-form-template/?utm_campaign=omAgK3&amp;utm_source=typeform.com-6670500-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-registrationform&amp;utm_term=EN" style="color: #999" target="_blank">Registration form</a>powered by Typeform</div>
                   </p>
                </div>
+</div>
 
-            </div>
-         </div>
+
         <!-- resume -->
 
   <!-- /.content-section-a -->

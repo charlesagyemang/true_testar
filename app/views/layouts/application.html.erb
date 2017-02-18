@@ -6,9 +6,10 @@
 	<link href="https://blackrockdigital.github.io/startbootstrap-landing-page/css/landing-page.css" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <!-- <script src="https://cdn.smooch.io/smooch.min.js"></script><script>
-    Smooch.init({ appToken: 'dh3jt17nxehqty9z4hdrdxcjn' });
- </script> -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.smooch.io/smooch.min.js"></script><script>
+      Smooch.init({ appToken: 'dh3jt17nxehqty9z4hdrdxcjn' });
+   </script>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
@@ -70,13 +71,5 @@
           <script async="" type="text/javascript" src="//cdn.fancybar.net/ac/fancybar.js?zoneid=1502&amp;serve=C6ADVKE&amp;placement=danstools" id="_fancybar_js"></script>
 
   </footer>
-
-
-
-
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <script src="https://cdn.smooch.io/smooch.min.js"></script><script>
-          Smooch.init({ appToken: 'dh3jt17nxehqty9z4hdrdxcjn' });
-       </script>
   </body>
 </html>
