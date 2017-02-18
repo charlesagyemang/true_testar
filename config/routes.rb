@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'faq/index'
+
   get 'register_as_company/login'
 
   get 'register_as_company/signup'

@@ -38,10 +38,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <% if current_user %>
                       <li>
-                          <%= link_to "FAQ", new_user_session_path,   class:"navbar-brand topnav" %>
+                          <%= link_to "FAQ", faq_index_path,   class:"navbar-brand topnav" %>
                       </li>
                       <li>
-                          <%= link_to get_name, userdash_index_path,   class:"navbar-brand topnav" %>
+                          <%= link_to get_firstname.size > 0? get_firstname : get_name, userdash_index_path,   class:"navbar-brand topnav" %>
                       </li>
                     <% else %>
                       <li>
