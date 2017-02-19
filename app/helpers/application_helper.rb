@@ -8,11 +8,11 @@ module ApplicationHelper
   end
 
   def get_firstname
-    current_user.firstname.capitalize
+    current_user.firstname
   end
 
   def get_surname
-    current_user.surname.capitalize
+    current_user.surname
   end
 
   def get_location

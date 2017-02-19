@@ -36,12 +36,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <% if current_user %>
+                    <% if user_signed_in? %>
                       <li>
-                          <%= link_to "FAQ", faq_index_path,   class:"navbar-brand topnav" %>
+                          <%= link_to  "FAQ", faq_index_path,   class:"navbar-brand topnav" %>
                       </li>
                       <li>
-                          <%= link_to  get_fullname, userdash_index_path,   class:"navbar-brand topnav" %>
+                          <%= link_to  "Dashboard", userdash_index_path,   class:"navbar-brand topnav" %>
                       </li>
                     <% else %>
                       <li>
