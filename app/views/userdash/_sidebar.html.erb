@@ -1,8 +1,6 @@
 <div class="col-sm-3">
 
-      <% if get_firstname.length > 0 %>
-        <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_firstname %></a><h4>
-      <% else %>
+      <% if current_user %>
           <h4><a href="#" class="btn btn-danger btn-block btn-compose-email">Welcome <%= get_name %></a><h4>
       <% end %>
 

@@ -41,7 +41,7 @@
                           <%= link_to "FAQ", faq_index_path,   class:"navbar-brand topnav" %>
                       </li>
                       <li>
-                          <%= link_to get_firstname.size > 0? get_firstname : get_name, userdash_index_path,   class:"navbar-brand topnav" %>
+                          <%= link_to  get_fullname, userdash_index_path,   class:"navbar-brand topnav" %>
                       </li>
                     <% else %>
                       <li>
