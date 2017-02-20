@@ -1,0 +1,21 @@
+<br /><br />
+
+<%= form_for [@context, @device] do |f| %>
+  <div>
+    <%= f.label     :device_name %>
+    <%= f.text_area :device_name %>
+  </div>
+  <div>
+    <%= f.label     :device_type %>
+    <%= f.text_area :device_type %>
+  </div>
+  <div>
+    <%= f.label     :device_os %>
+    <%= f.text_area :device_os %>
+  </div>
+  <div>
+    <%= f.label     :os_version %>
+    <%= f.text_area :os_version %>
+  </div>
+  <%= f.submit %>
+<% end %>

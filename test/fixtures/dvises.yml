@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_name: MyString
+  devise_type: MyString
+  device: MyString
+  manufacturer: MyString
+  device_model: MyString
+  device_current_state: MyString
+  user: 
+
+two:
+  device_name: MyString
+  devise_type: MyString
+  device: MyString
+  manufacturer: MyString
+  device_model: MyString
+  device_current_state: MyString
+  user: 

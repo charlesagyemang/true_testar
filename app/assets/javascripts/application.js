@@ -18,7 +18,9 @@
   // var user_url = "";
   // var admin_url = "";
 
+
 $(document).ready(function () {
+
 
   // $.ajax({
   //       url: 'https://stormy-refuge-52415.herokuapp.com/urls',

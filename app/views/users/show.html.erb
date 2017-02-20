@@ -1,0 +1,14 @@
+<br /><br />
+<h1>Details</h1><br />
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_index_path %>
+<%= link_to 'New Interaction', new_user_device_path(@user)%>

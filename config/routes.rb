@@ -1,8 +1,28 @@
 Rails.application.routes.draw do
 
+  get 'communities/index'
 
+  get 'up_coming_tests/index'
 
+  get 'on_going_tests/index'
 
+  get 'points/my_points'
+
+  get 'points/redeem_points'
+
+  root 'welcome#index'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'devices/new'
+
+  get 'devices/create'
+
+  get 'devices/edit'
+
+  get 'devices/update'
 
   get 'faq/index'
 
@@ -16,7 +36,12 @@ Rails.application.routes.draw do
   get 'userdash/profile'
 
   devise_for :users, controllers: { registrations: "registrations" }
-  root 'welcome#index'
+
+  resources :users do
+    resources :devices
+  end
+
+
   get 'about/index'
   get 'contact/index'
 

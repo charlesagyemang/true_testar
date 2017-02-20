@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217032943) do
+ActiveRecord::Schema.define(version: 20170220095335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "device_name"
+    t.string   "deviceable_type"
+    t.integer  "deviceable_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "device_type"
+    t.string   "device_os"
+    t.string   "os_version"
+    t.index ["deviceable_type", "deviceable_id"], name: "index_devices_on_deviceable_type_and_deviceable_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

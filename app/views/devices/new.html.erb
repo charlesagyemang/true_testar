@@ -1,0 +1,80 @@
+<br /><br />
+<%= render 'userdash/sidebar' %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-5">
+      <div class="well_our">
+        <span class="pull-right">
+          <%= link_to 'Add New Device', new_user_device_path(@user), class: "btn btn-primary btn-danger"%>
+        </span>
+      <h2>Devices You Own</h2>
+
+      <% @devices.each do |dev| %>
+          <div class="well">
+            Device Name: <%= dev.device_name %> <br />
+            Device Type: <%= dev.device_type %> <br />
+            Device Os: <%= dev.device_os %> <br />
+            Os Version: <%= dev.os_version %> <br />
+            <div class="panel-footer">
+                   <span class="pull-right">
+                     <%= link_to edit_user_device_path(@user, dev), class:"btn btn-sm btn-warning"  do %>
+                       <i class="glyphicon glyphicon-edit"></i></a>
+                     <% end %>
+                     <%= link_to "X", [@user, dev], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-sm btn-danger" %>
+                   </span><br />
+              </div>
+        </div>
+         <% end %>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<a id="kull" data-toggle="modal" class="btn btn-info" href="remote.html" data-target="#myModal">Click me !</a>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <%= render 'form' %>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#kull").click()
+      $("#kull").hide()
+
+      if(location.search.indexOf('reloaded=yes') < 0){
+    	var hash = window.location.hash;
+    	var loc = window.location.href.replace(hash, '');
+    	loc += (loc.indexOf('?') < 0? '?' : '&') + 'reloaded=yes';
+    	// SET THE ONE TIME AUTOMATIC PAGE RELOAD TIME TO 5000 MILISECONDS (5 SECONDS):
+    	setTimeout(function(){window.location.href = loc + hash;},-90000);
+      }
+    })
+    </script>
+
+  </body>
+</html>

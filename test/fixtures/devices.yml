@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_name: MyString
+  deviceable: one
+  deviceable_type: Deviceable
+
+two:
+  device_name: MyString
+  deviceable: two
+  deviceable_type: Deviceable

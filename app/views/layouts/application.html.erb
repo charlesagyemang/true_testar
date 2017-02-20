@@ -38,11 +38,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <% if user_signed_in? %>
                       <li>
-                          <%= link_to  "FAQ", faq_index_path,   class:"navbar-brand topnav" %>
+                          <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav" %>
                       </li>
-                      <!-- <li>
-                          <%= link_to  "Dashboard", userdash_index_path,   class:"navbar-brand topnav" %>
-                      </li> -->
+                      <li>
+                          <%= link_to  get_firstname , userdash_index_path,   class:"navbar-brand topnav" %>
+                      </li>
                     <% else %>
                       <li>
                             <%= link_to "Log in", new_user_session_path,   class:"navbar-brand topnav" %>
