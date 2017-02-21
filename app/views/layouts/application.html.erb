@@ -26,10 +26,17 @@
 
             <div>
               <!-- <i class="fa fa-twitter-square" aria-hidden="true"></i><%= link_to "True testar",  root_path,  class:"navbar-brand topnav" %> -->
-              <%= link_to root_path, class:"navbar-brand topnav" do %>
-                 <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
-                 True Testar
-              <% end%>
+              <% if user_signed_in? %>
+                <%= link_to userdash_index_path, class:"navbar-brand topnav" do %>
+                   <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
+                   <%= "Hey " + get_firstname + " Welcome To TrueTesta" %>
+                <% end%>
+              <% else %>
+                <%= link_to root_path, class:"navbar-brand topnav" do %>
+                   <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
+                   True Testar
+                <% end%>
+              <% end %>
             </div>
 
             </div>

@@ -1,38 +1,32 @@
 <br /><br />
     <%= render 'userdash/sidebar' %>
-<div class="container">
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col-5">
-      <div class="well_our">
-        <span class="pull-right">
-          <%= link_to 'Add New Device', new_user_device_path(@user), class: "btn btn-primary btn-danger"%>
-        </span>
-      <h2>Devices You Own</h2>
 
-      <% @devices.each do |dev| %>
-          <div class="well">
-            Device Name: <%= dev.device_name %> <br />
-            Device Type: <%= dev.device_type %> <br />
-            Device Os: <%= dev.device_os %> <br />
-            Os Version: <%= dev.os_version %> <br />
-            <div class="panel-footer">
-                   <span class="pull-right">
-                     <%= link_to edit_user_device_path(@user, dev), class:"btn btn-sm btn-warning"  do %>
-                       <i class="glyphicon glyphicon-edit"></i></a>
-                     <% end %>
-                     <%= link_to "X", [@user, dev], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-sm btn-danger" %>
-                   </span><br />
-              </div>
-        </div>
-         <% end %>
-        </div>
 
+<div class="bs-callout bs-callout-danger well_our_two">
+  <div class="container">
+    <div class="col-lg-9 col-lg-offset-0 col-sm-12">
+      <span class="pull-right">
+        <%= link_to 'Add New Device', new_user_device_path(@user), class: "btn btn-primary btn-danger"%>
+      </span>
+
+          <h2>Devices You Own</h2>
+          <% @devices.each do |dev| %>
+              <div class="well">
+                Device Name: <%= dev.device_name %> <br />
+                Device Type: <%= dev.device_type %> <br />
+                Device Os: <%= dev.device_os %> <br />
+                Os Version: <%= dev.os_version %> <br />
+                <div class="panel-footer">
+                       <span class="pull-right">
+                         <%= link_to edit_user_device_path(@user, dev), class:"btn btn-sm btn-warning"  do %>
+                           <i class="glyphicon glyphicon-edit"></i></a>
+                         <% end %>
+                         <%= link_to "X", [@user, dev], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-sm btn-danger" %>
+                       </span><br />
+                  </div>
+            </div>
+       <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-	<body>
-
-</html>

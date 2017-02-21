@@ -1,7 +1,7 @@
 <div class="col-sm-3">
 
       <% if user_signed_in? %>
-        <h4><%= link_to "Welcome " + get_firstname, userdash_index_path, class:"btn btn-danger btn-block btn-compose-email"  %></h4>
+        <h4><%= link_to  get_firstname + "'s DashBoard" , userdash_index_path, class:"btn btn-danger btn-block btn-compose-email"  %></h4>
       <% end %>
 
       <h4 class="nav-email-subtitle">General</h4>
