@@ -49,9 +49,9 @@
             <% end %>
         </li>
         <li>
-            <a href="#">
-                <i class="fa fa-reply"></i> Refer A Friend
-            </a>
+            <%= link_to   refer_friends_index_path  do %>
+              <i class="fa fa-reply"></i> Refer A Friend
+            <% end %>
         </li>
     </ul><!-- /.nav -->
 
@@ -63,9 +63,9 @@
             <% end %>
         </li>
         <li>
-            <a href="">
-                <i class="fa fa-binoculars"></i> Testing Expertise
-            </a>
+          <%= link_to new_user_experience_path(@user)  do%>
+            <i class="fa fa-binoculars"></i> Experinces And Biases
+          <% end %>
         </li>
         <li>
             <a href="">

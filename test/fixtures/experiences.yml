@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field: MyString
+  description: MyText
+  experienceable: one
+  experienceable_type: Experienceable
+
+two:
+  field: MyString
+  description: MyText
+  experienceable: two
+  experienceable_type: Experienceable

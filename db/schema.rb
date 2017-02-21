@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220095335) do
+ActiveRecord::Schema.define(version: 20170221014123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20170220095335) do
     t.string   "device_os"
     t.string   "os_version"
     t.index ["deviceable_type", "deviceable_id"], name: "index_devices_on_deviceable_type_and_deviceable_id", using: :btree
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string   "field"
+    t.text     "description"
+    t.string   "experienceable_type"
+    t.integer  "experienceable_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["experienceable_type", "experienceable_id"], name: "index_experiences_on_experienceable_type_and_experienceable_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

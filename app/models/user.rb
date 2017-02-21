@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :devices, as: :deviceable
+  has_many :devices,      as: :deviceable
+  has_many :experiences,  as: :experienceable
 end

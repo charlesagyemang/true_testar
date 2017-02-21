@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'refer_friends/index'
+
+  get 'experiences/new'
+
+  get 'experiences/edit'
+
   get 'communities/index'
 
   get 'up_coming_tests/index'
@@ -39,6 +45,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :devices
+    resources :experiences
   end
 
 
