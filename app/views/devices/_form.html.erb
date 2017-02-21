@@ -1,21 +1,30 @@
-<br /><br />
-
-<%= form_for [@context, @device] do |f| %>
-  <div>
-    <%= f.label     :device_name %>
-    <%= f.text_area :device_name %>
-  </div>
-  <div>
-    <%= f.label     :device_type %>
-    <%= f.text_area :device_type %>
-  </div>
-  <div>
-    <%= f.label     :device_os %>
-    <%= f.text_area :device_os %>
-  </div>
-  <div>
-    <%= f.label     :os_version %>
-    <%= f.text_area :os_version %>
-  </div>
-  <%= f.submit %>
-<% end %>
+      <div class="container">
+      	<div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+                  <legend><i class="glyphicon glyphicon-globe"></i> Add A New Device</legend>
+                  <div class="row">
+                      <%= form_for [@context, @device] do |f| %>
+                        <div class="form-group col-xs-12 col-md-12">
+                          <%= f.label     :device_name %>
+                          <%= f.text_field :device_name, class:"form-control", placeholder:"eg. iPhone" %>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-12">
+                          <%= f.label     :device_type %>
+                          <%= f.text_field :device_type, class:"form-control", placeholder:"eg. 7plus" %>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-12">
+                          <%= f.label     :device_os %>
+                          <%= f.text_field :device_os, class:"form-control" , placeholder:"eg. iOS" %>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-12">
+                          <%= f.label     :os_version %>
+                          <%= f.text_field :os_version, class:"form-control" , placeholder:"eg. 10.3" %>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-12">
+                        <%= f.submit class: "btn btn-primary btn-danger" %>
+                       </div>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
