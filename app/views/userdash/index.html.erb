@@ -9,41 +9,12 @@
 <br /><br />
 <!-- nav bar -->
 <!-- <%= controller_name %> -->
-
+<div class="full" >
 <%= render 'sidebar' %>
 
-    <div class="col-sm-9">
+    <div class="col-sm-9 ">
 
-        <!-- resumt -->
-               <div class="bs-callout bs-callout-danger">
-
-                 <div class="panel panel-default">
-                        <div class="panel-heading resume-heading">
-                           <div class="row">
-                              <div class="col-lg-12">
-                                 <div class="col-xs-12 col-sm-4">
-                                    <figure>
-                                       <img class="img-square img-responsive" alt="" src="<%= asset_path( 'logotestar.png' ) %>">
-                                    </figure>
-                                    <div class="row">
-                                       <div class="col-xs-12 social-btns">
-
-                                       </div>
-
-
-                                    </div>
-                                 </div>
-                                 <div class="col-xs-12 col-sm-8">
-                                    <ul class="list-group">
-                                     <li class="list-group-item">Name: <%= get_fullname %></li>
-                                     <li class="list-group-item">Status: Certified Testar</li>
-                                     <li class="list-group-item"><i class="fa fa-envelope"></i> <%= get_email %></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
+               <div class="bs-callout bs-callout-danger full">
 
                   <h2><strong> <%= get_firstname if user_signed_in? %>!! </strong> Wanna know How This Thing Works?</h2>
                   <p>
@@ -53,46 +24,8 @@
 
                </div>
 
-                  <h3><a id="on_going_tester">On Going Test(s)</a></h3>
-                  <div class="row">
-                      <div class="col-lg-5 col-sm-6">
-                          <hr class="section-heading-spacer">
-                          <div class="clearfix"></div>
-                          <h4 class="section-heading">AF-Radio UX Test Running From Now Till 20th February</h4>
-                          <p class="lead">Be one of the lucky ones to have this great opportunity to test this great product. Read the instructions
-                            <strong> <a href="http://bit.ly/afradiotest">here</a></strong> and click <Strong><a href="http://join.deathtothestockphoto.com/">here</a></strong> to begin</p>
 
-
-                      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                          <img class="img-responsive" src="<%= asset_path( 'Af-Radio.jpg' ) %>" alt="">
-                      </div>
-                  </div>
-               </div>
-
-
-
-                  <h3><a id="up_coming_tests">Up Coming Tests</a></h3>
-                  <div class="row">
-                      <div class="col-lg-5 col-sm-6">
-                          <hr class="section-heading-spacer">
-                          <div class="clearfix"></div>
-                          <h4 class="section-heading">NextLevel-AirFreshner </h4>
-                          <p class="lead">Register to test this physical product by clicking on the <strong>Register Here</strong> Botton Below </p>
-                      </div>
-                      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                          <img class="img-responsive" src="<%= asset_path( 'airfreshner.jpg' ) %>" alt="">
-                      </div>
-                      <div id="yep">
-                        <a id="json" href=""></a>
-                      </div>
-
-                  <!-- Change the width and height values to suit you best -->
-                  <!-- <p>
-                    <div class="typeform-widget" data-url="https://charles251.typeform.com/to/omAgK3" data-text="Registration Form" style="width:100%;height:300px;"></div>
-                    <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
-                    <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"><a href="https://www.typeform.com/examples/forms/registration-form-template/?utm_campaign=omAgK3&amp;utm_source=typeform.com-6670500-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-registrationform&amp;utm_term=EN" style="color: #999" target="_blank">Registration form</a>powered by Typeform</div>
-                  </p> -->
-               </div>
+            </div>
 </div>
 
 
