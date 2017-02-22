@@ -1,6 +1,10 @@
 class DevicesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @user = context
+    @devices = @user.devices
+  end
   def new
     @context = context
     @device = @context.devices.new
@@ -12,7 +16,7 @@ class DevicesController < ApplicationController
     @context = context
     @device = @context.devices.new(device_params)
     if @device.save
-      redirect_to users_index_path, notice: "Device successfully added"
+      redirect_to user_devices_path, notice: "Device successfully added"
     else
       render :new
     end
@@ -29,7 +33,7 @@ class DevicesController < ApplicationController
     @context = context
     @device = context.devices.find(params[:id])
     if @device.update_attributes(device_params)
-      redirect_to users_index_path, notice: "The interaction has been added"
+      redirect_to user_devices_path, notice: "The interaction has been added"
     end
   end
 

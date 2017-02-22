@@ -93,70 +93,143 @@ button {
        width: 100%;
     }
 }
+
+
 </style>
 <body>
+<div class="full">
 
-<h2>Modal Signup Form</h2>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+  <a name="about"></a>
+  <div class="intro_header2 full">
+      <div class="container">
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content animate" action="">
-    <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="intro-message">
+                      <h1>True Testar</h1>
+                      <center><h3>
+                        A crowdsourced testing for your products<br />
+                        Get the real user experience and feedback
+                      </h3></center>
+                      <hr class="intro-divider">
+                      <ul class="list-inline intro-social-buttons">
+                         <% if current_user %>
+                            <li>
+                                <!-- <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-thermometer-three-quarters"></i> <span class="network-name">Sign Up As A Tester</span></a> -->
+                                <!-- <%= link_to "Sign Up As Tester", {controller: "welcome", action: "index"},  class: "btn btn-default btn-lg"%> -->
+                                  <%= link_to userdash_index_path, class: "btn btn-default btn-lg" do %>
+                                    <i class="fa fa-user"></i> View Your DashBoard
+                                  <% end%>
 
-      <label><b>Company Name</b></label><br />
-      <input id="company_name" type="text" placeholder="Company Name Here: " name="company_name" required><br />
+                            </li>
+                          <% else %>
+                            <li>
+                                <!-- <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-thermometer-three-quarters"></i> <span class="network-name">Sign Up As A Tester</span></a> -->
+                                <!-- <%= link_to "Sign Up As Tester", {controller: "welcome", action: "index"},  class: "btn btn-default btn-lg"%> -->
+                                  <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
+                                    <i class="fa fa-user-plus"></i> Sign Up As A Tester
+                                  <% end %>
 
-      <label><b>Company Location</b></label><br />
-      <input id="company_location" type="text" placeholder="Where Is The Company Located?" name="location" required ><br />
+                            </li>
+                            <li>
+                              <!-- <a href="http://localhost:8080/#/" class="btn btn-default btn-lg"><i class="fa fa-thermometer-three-quarters"></i> <span class="network-name">Sign Up As A Tester</span></a> -->
+                                <!--<%= link_to root_path, class: "btn btn-default btn-lg" do %>
+                                  <i class="fa fa-thermometer-three-quarters fa-fw"></i> Create A Test-->
+                                <!--<% end %>-->
+                                <!--<button onclick="document.getElementById('id01').style.display='block'" class="btn btn-default btn-lg">Sign Up</button>-->
+                                <a  onclick="document.getElementById('id01').style.display='block'" class="btn btn-default btn-lg"><i class="fa fa-thermometer-three-quarters fa-fw"></i> Sign Up As A Company</a>
+                            </li>
 
-      <label><b>Email</b></label><br />
-      <input id="company_email" type="text" placeholder="Email here " name="location" required ><br />
+                          <% end %>
 
-      <label><b>Company Type</b></label><br />
-      <input id="company_type" type="text" placeholder="Which Industry Are You In?" name="psw-repeat" required><br />
+                          <!-- <li>
+                              <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                          </li> -->
+                          <!-- <% if current_user %>
+                          <h1>Welcome <%= current_user.email %> </h1>
+                          <% else %>
+                           <% link_to :root_path %>
+                          <% end %> -->
 
-      <label><b>How Many Years Have You Been In Operation?</b></label><br />
-      <input id="company_age" type="text" placeholder="Years Of Operation?" name="email" required><br />
+                      </ul>
+                  </div>
+              </div>
+          </div>
 
-      <label><b>Password</b></label><br />
-      <input id="company_password" type="password" placeholder="Enter Password" name="psw" required ><br />
-
-      <label><b>Repeat Password</b></label><br />
-      <input id="company_repeat_type" type="password" placeholder="Repeat Password" name="psw-repeat" required><br />
-
-      <label><b>Tell us a little about your company</b></label><br />
-      <input id="company_bio" type="text" placeholder="Tell Us  A Little About Your Company" name="email" required><br />
-
-      <input type="checkbox" checked="checked"> Remember me <br />
-      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-      
-
-      <div class="clearfix">
-        <button id="company_cancel" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button id="company_signup3" type="submit" class="signupbtn btn_size">Sign Up</button>
       </div>
-      
+      <!-- /.container -->
 
-    </div>
-     <input class="btn btn-primary" id="company_signup" type="button" value="Sign Up"></input>
-  </form>
-  
-</div>
+  </div>
+  <!-- /.intro-header -->
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+            <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> -->
 
-</body>
-</html>
+            <div id="id01" class="modal">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+              <form class="modal-content animate" action="">
+                <div class="container">
+
+                  <label><b>Company Name</b></label><br />
+                  <input id="company_name" type="text" placeholder="Company Name Here: " name="company_name" required><br />
+
+                  <label><b>Company Location</b></label><br />
+                  <input id="company_location" type="text" placeholder="Where Is The Company Located?" name="location" required ><br />
+
+                  <label><b>Email</b></label><br />
+                  <input id="company_email" type="text" placeholder="Email here " name="location" required ><br />
+
+                  <label><b>Company Type</b></label><br />
+                  <input id="company_type" type="text" placeholder="Which Industry Are You In?" name="psw-repeat" required><br />
+
+                  <label><b>How Many Years Have You Been In Operation?</b></label><br />
+                  <input id="company_age" type="text" placeholder="Years Of Operation?" name="email" required><br />
+
+                  <label><b>Password</b></label><br />
+                  <input id="company_password" type="password" placeholder="Enter Password" name="psw" required ><br />
+
+                  <label><b>Repeat Password</b></label><br />
+                  <input id="company_repeat_type" type="password" placeholder="Repeat Password" name="psw-repeat" required><br />
+
+                  <label><b>Tell us a little about your company</b></label><br />
+                  <input id="company_bio" type="text" placeholder="Tell Us  A Little About Your Company" name="email" required><br />
+
+                  <input type="checkbox" checked="checked"> Remember me <br />
+                  <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+
+
+                  <div class="clearfix">
+                    <button id="company_cancel" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button id="company_signup3" type="submit" class="signupbtn btn_size">Sign Up</button>
+                  </div>
+
+
+                </div>
+                 <input class="btn btn-primary" id="company_signup" type="button" value="Sign Up"></input>
+              </form>
+
+            </div>
+
+            <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            </script>
+
+            <script>
+              $(document).ready(function(){
+                document.getElementById('id01').style.display='block'
+              })
+            </script>
+
+            </body>
+            </div>
+            </html>

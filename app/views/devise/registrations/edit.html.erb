@@ -1,4 +1,7 @@
 <br /><br />
+
+<% if resource_name.to_s.humanize == "User" %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 <%= render 'userdash/sidebar' %>
@@ -179,3 +182,186 @@
 </div>
 </div>
 <hr>
+
+<% elsif resource_name.to_s.humanize == "User" %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+<%= render 'userdash/sidebar' %>
+
+<div class="bs-callout bs-callout-danger well_our_two">
+  <div class="container">
+      <h1>Edit Company Profile</h1>
+      <hr>
+    <div class="row">
+
+        <!-- left column -->
+        <!-- <div class="col-md-3">
+          <div class="text-center">
+            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+            <h6>Upload a different photo...</h6>
+
+            <input type="file" class="form-control">
+
+          </div>
+        </div> -->
+
+        <!-- edit form column -->
+        <div class="col-md-6 personal-info">
+          <!-- <div class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i>
+            This is an <strong>.alert</strong>. Use this to show important messages to the user.
+          </div> -->
+            <br />
+              <div class="form-group">
+                <%= f.label       :firstname %><br />
+                <%= f.text_field  :firstname, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :surname %><br />
+                <%= f.text_field  :surname, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :gender %><br />
+                <%= f.select      :gender,        [
+                                                    'Male',
+                                                    'Female',
+                                                   ],  class: "form-control" %>
+             </div>
+
+
+              <div class="form-group">
+                <%= f.label       :location %><br />
+                <%= f.text_field  :location, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :occupation %><br />
+                <%= f.text_field  :occupation, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :age %><br />
+                <%= f.text_field  :age, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :interests %><br />
+                <%= f.text_area   :interests,  class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label        :phone_number %><br />
+                <%= f.text_field   :phone_number, autofocus: true, class: "form-control" %>
+              </div>
+
+
+              <div class="form-group">
+                <%= f.label       :mobile_money_number %><br />
+                <%= f.text_field  :mobile_money_number, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :alternative_email %><br />
+                <%= f.email_field :alternative_email, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :nationality %><br />
+                <%= f.select      :nationality,[
+                                                  'Afghanistan', 'Akrotiri', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Ashmore and Cartier Islands', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados',
+                                                  'Bassas de India', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswanna', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burma', 'Burundi',
+                                                  'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Clipperton Island', 'Cocoas (Keeling) Islands', 'Colombia', 'Comoros', 'Congo (Democratic Republic)', 'Congo (Republic)', 'Cook Islands',
+                                                  'Coral Sea Islands', 'Costa Rica', 'Ivory Coast', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Dhekelia', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Europa Island',
+                                                  'Falkland Islands (Islas Malvinas)', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Guinea', 'French Polynesia', 'French Southern and Antarctic Lands', 'Gabon', 'Gambia', 'Gaza Strip', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Glorioso Islands', 'Greece', 'Greenland',
+                                                  'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard Island and McDonald Islands', 'Holy See (Vatican City)', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland',
+                                                  'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Jan Mayen', 'Japan', 'Jersey', 'Jordan', 'Juan de Nova Island', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea (North)', 'Korea (South)', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho',
+                                                  'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia (Federated States)',
+                                                  'Moldova', 'Monaco', 'Mongolia', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nauru', 'Navassa Island', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands',
+                                                  'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paracel Islands', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Helena',
+                                                  'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia',
+                                                  'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Spratly Islands', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo',
+                                                  'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tromelin Island', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela', 'Vietnam', 'Virgin Islands',
+                                                  'Wake Island', 'Wallis and Futuna', 'West Bank', 'Western Sahara', 'Yemen', 'Zambia', 'Zimbabwe'
+
+                                                ], class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :small_bio %><br />
+                <%= f.text_area   :small_bio, autofocus: true, row: 8, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :date_of_birth %><br />
+                <%= f.date_field  :date_of_birth, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label      :educational_background %><br />
+                <%= f.select     :educational_background, [
+                                                            'No School',
+                                                            'JHS Certificate Holder',
+                                                            'SHS Certificate Holder',
+                                                            'HND',
+                                                            'Undergraduate',
+                                                            'Post Graduate'
+
+                                                          ],  class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label       :marital_status %><br />
+                <%= f.select      :marital_status,        [
+                                                            'Single',
+                                                            'Married',
+                                                            'Divorced'
+
+                                                           ],  class: "form-control" %>
+              </div>
+
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <div class="form-group">
+                <%= f.label          :password %> <i>(leave blank if you don't want to change it)</i><br />
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %> characters minimum</em>
+                <% end %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label          :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label          :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+
+            <h3>Cancel my account</h3>
+
+            <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %></p>
+
+            <%= link_to "Back", :back %>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<hr>
+<% end %>

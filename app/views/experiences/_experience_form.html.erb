@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+            <legend><i class="glyphicons glyphicons-display"></i> Add A Field Of Expertise</legend>
+            <div class="row">
+                <%= form_for [@context, @experience] do |f| %>
+                  <div class="form-group col-xs-12 col-md-12">
+                    <%= f.label      :field %>
+                    <%= f.text_field :field, class:"form-control", placeholder:"eg. Software Testing" %>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-12">
+                    <%= f.label      :description %>
+                    <%= f.text_area :description, class:"form-control", placeholder:"eg. I have tested not less than 30 software so when it comes to software testing I am your guy", row: 8 %>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-12">
+                  <%= f.submit class: "btn btn-primary btn-danger" %>
+                 </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'companies/profile'
+
+  devise_for :companies
   get 'refer_friends/index'
 
   get 'experiences/new'

@@ -58,19 +58,14 @@
     <h4 class="nav-email-subtitle">Testing Profile</h4>
     <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
         <li>
-            <%= link_to users_index_path  do%>
+            <%= link_to user_devices_path(@user)  do%>
               <i class="fa fa-gamepad"></i> My Devices
             <% end %>
         </li>
         <li>
-          <%= link_to new_user_experience_path(@user)  do%>
+          <%= link_to user_experiences_path(@user)  do%>
             <i class="fa fa-binoculars"></i> Experinces And Biases
           <% end %>
-        </li>
-        <li>
-            <a href="">
-                <i class="fa fa-cog"></i> Device and OS Specifications
-            </a>
         </li>
     </ul><!-- /.nav -->
 </div>
