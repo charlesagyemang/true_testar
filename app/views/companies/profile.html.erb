@@ -1,7 +1,49 @@
 <br ><br />
 <div class="full">
-  <h1>Companies#profile</h1>
-  <p>Find me in app/views/companies/profile.html.erb</p>
+  <table>
+    <tr>
+      <th>
+      <div>
+        <div class="card">
+          <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
+          <div class="container">
+          </div>
+          <input id="btn_create_a_test" class="btn btn-primary bottom "type="button"  value="Create  A Test" style="width:100%"></input>
+        </div><br /><br />
+      </th>
+    <th>
+    <th>
+      <div class="card">
+        <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
+        <div class="container">
+        </div>
+        <input id="btn_view_test_progress" class="btn btn-primary bottom "type="button"  value="View Test Progress" style="width:100%"></input>
+      </div><br /><br />
+    </div>
+  </th>
+  <th>
+    <div class="card">
+      <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
+      <div class="container">
+      </div>
+      <input id="btn_download_test_results" class="btn btn-primary bottom "type="button"  value="Download Results" style="width:100%"></input>
+    </div><br /><br />
+  </div>
+  </th>
+  <th>
+    <th>
+      <div class="card">
+        <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
+        <div class="container">
+        </div>
+        <input id="btn_review_results" class="btn btn-primary bottom "type="button"  value="Review Results" style="width:100%"></input>
+      </div><br /><br />
+    </div>
+  </th>
+  </th>
+  </tr>
+  </table>
 
-  <%= link_to "Logout",       destroy_company_session_path, :method => :delete %>
+
+  <%= link_to "Logout",  destroy_company_session_path, :method => :delete %>
 </div>

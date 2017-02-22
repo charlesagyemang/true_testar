@@ -7,6 +7,11 @@ module ApplicationHelper
     current_user.email[0...get_email.index('@')].to_s.capitalize
   end
 
+  def get_company_name
+    current_company.email[0...current_company.email.index('@')].to_s.capitalize
+  end
+
+
   def get_firstname
     current_user.firstname.to_s.capitalize
   end
