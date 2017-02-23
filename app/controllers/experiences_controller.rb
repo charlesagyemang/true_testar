@@ -4,6 +4,7 @@ class ExperiencesController < ApplicationController
   def index
     @user = context
     @experiences = @user.experiences
+    @tests = Test.all
   end
   def new
     @user = current_user

@@ -73,4 +73,20 @@ module ApplicationHelper
   def get_age
     current_user.age.to_s
   end
+
+  def get_today
+    Date.today
+  end
+
+  def get_year
+    get_today.to_s[0...4]
+  end
+
+  def get_month
+    get_today.to_s[5...7]
+  end
+
+  def get_day
+    get_today.to_s[8...10]
+  end
 end

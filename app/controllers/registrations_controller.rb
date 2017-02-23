@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  before_filter :load_tests
   # def after_sign_up_path_for(resource)
   #   :userdash_index
   # end
@@ -33,5 +33,10 @@ class RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     :userdash_index
   end
+
+  private
+    def load_tests
+      @tests = Test.all
+    end
 
 end

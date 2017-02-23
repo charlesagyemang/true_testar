@@ -4,9 +4,11 @@ class UserdashController < ApplicationController
 
   def index
     @user = current_user
+    @tests = Test.all
   end
 
   def profile
     @user = current_user
+    @tests = Test.all
   end
 end

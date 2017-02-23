@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222044151) do
+ActiveRecord::Schema.define(version: 20170222232525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,20 @@ ActiveRecord::Schema.define(version: 20170222044151) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["experienceable_type", "experienceable_id"], name: "index_experiences_on_experienceable_type_and_experienceable_id", using: :btree
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string   "title"
+    t.text     "requirements"
+    t.text     "instructions"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.date     "review_date"
+    t.string   "testable_type"
+    t.integer  "testable_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["testable_type", "testable_id"], name: "index_tests_on_testable_type_and_testable_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

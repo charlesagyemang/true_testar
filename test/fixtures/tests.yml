@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  requirements: MyText
+  instructions: MyText
+  start_date: 2017-02-22
+  end_date: 2017-02-22
+  review_date: 2017-02-22
+  testable: one
+  testable_type: Testable
+
+two:
+  title: MyString
+  requirements: MyText
+  instructions: MyText
+  start_date: 2017-02-22
+  end_date: 2017-02-22
+  review_date: 2017-02-22
+  testable: two
+  testable_type: Testable

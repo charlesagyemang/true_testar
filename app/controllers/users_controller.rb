@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @users = User.all
     @user = current_user
     @devices = @user.devices
+    @tests = Test.all
   end
 
   def show

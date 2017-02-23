@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'tests/index'
+  get 'tests/new'
+
+  get 'tests/edit'
+
   get 'companies/profile'
+  resources :companies do
+    resources :tests
+  end
 
   devise_for :companies
+
   get 'refer_friends/index'
 
   get 'experiences/new'

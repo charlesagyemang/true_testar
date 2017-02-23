@@ -1,6 +1,40 @@
-<br /><br />
-<div class="full">
+
   <br /><br />
+
+  <%= render 'dasher' %>
+<div class="well_our_two">
+        <div class="bs-callout bs-callout-danger ">
+          <div class="container">
+            <div class="col-lg-9 col-lg-offset-0 col-sm-12">
+              <span class="pull-right">
+                <%= link_to 'Create Test', new_company_test_path(@company), class: "btn btn-primary btn-danger"%>
+              </span>
+                  <h2>Tests You Have Created</h2>
+                  <% @tests.each do |t| %>
+                      <div class="well">
+                        Test Name: <%= t.title %> <br />
+                        Test Requirements: <%= t.requirements %> <br />
+                        Test Instructions: <%= t.instructions %> <br />
+                        Start Date: <%= t.start_date %> <br />
+                        End Date: <%= t.end_date %> <br />
+                        Review Date: <%= t.review_date %> <br />
+                        <div class="panel-footer">
+                               <span class="pull-right">
+                                 <%= link_to edit_company_test_path(@company, t), class:"btn btn-sm btn-warning"  do %>
+                                   <i class="glyphicon glyphicon-edit"></i></a>
+                                 <% end %>
+                                 <%= link_to "X", [@company, t], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-sm btn-danger" %>
+                               </span><br />
+                          </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+</div>
+
+
+  <!-- <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main full">
   <table>
     <tr>
       <th>
@@ -14,32 +48,6 @@
       </th>
     <th>
     <th>
-      <div class="card">
-        <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
-        <div class="container">
-        </div>
-        <input id="btn_view_test_progress" class="btn btn-primary bottom "type="button"  value="View Test Progress" style="width:100%"></input>
-      </div><br /><br />
-    </div>
-  </th>
-  <th>
-    <div class="card">
-      <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
-      <div class="container">
-      </div>
-      <input id="btn_download_test_results" class="btn btn-primary bottom "type="button"  value="Download Results" style="width:100%"></input>
-    </div><br /><br />
-  </div>
-  </th>
-  <th>
-    <th>
-      <div class="card">
-        <img src="<%= asset_path('Af-Radio.jpg') %>" alt="Avatar" style="width:100%">
-        <div class="container">
-        </div>
-        <input id="btn_review_results" class="btn btn-primary bottom "type="button"  value="Review Results" style="width:100%"></input>
-      </div><br /><br />
-    </div>
   </th>
   </th>
   </tr>

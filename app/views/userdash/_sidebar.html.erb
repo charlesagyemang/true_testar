@@ -8,7 +8,7 @@
     <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
         <li class="">
             <%= link_to on_going_tests_index_path  do%>
-              <i class="fa fa-flask"></i>  On Going Tests  <span class="label label-info pull-right inbox-notification">1</span>
+              <i class="fa fa-flask"></i>  On Going Tests  <span class="label label-info pull-right inbox-notification"><%= @tests.count %></span>
             <% end %>
         </li>
         <li>
@@ -20,7 +20,7 @@
 
         <li>
             <%= link_to up_coming_tests_index_path  do%>
-              <i class="fa fa-certificate"></i>  Up Coming Tests  <span class="label label-info pull-right inbox-notification">1</span>
+              <i class="fa fa-certificate"></i>  Up Coming Tests  <span class="label label-info pull-right inbox-notification"></span>
             <% end %>
         </li>
 
