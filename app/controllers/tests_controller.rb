@@ -3,6 +3,7 @@ class TestsController < ApplicationController
   def index
     @company = current_testowner
     @tests = @company.tests
+    @testowner = current_testowner
   end
 
   def new

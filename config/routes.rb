@@ -1,24 +1,26 @@
 Rails.application.routes.draw do
 
-  get 'testowners/profile'
+  devise_for :testowners
 
-  resources :testowners do
-    resources :tests
+  scope "/admin" do
+    resources :testowners do
+      resources :tests
+    end
   end
 
-  devise_for :testowners
+  get 'testowners/profile'
+
   get 'tests/index'
   get 'tests/new'
 
   get 'tests/edit'
 
+
+  devise_for :companies, controllers: { registrations: "registrations" }
   get 'companies/profile'
   resources :companies do
     resources :tests
   end
-
-  devise_for :companies, controllers: { registrations: "registrations" }
-
   get 'refer_friends/index'
 
   get 'experiences/new'
