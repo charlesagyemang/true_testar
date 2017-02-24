@@ -14,15 +14,19 @@
 <div class="bs-callout bs-callout-danger well_our_two">
 
    <div class="row">
-     <h2><a id="on_going_tester">On Going Test(s)</a></h2>
+     <div class="col-lg-9">
+     <h2><a id="on_going_tester">On Going Tests </a></h2>
      <hr class="section-heading-spacer">
-       <div class="col-lg-9 col-sm-9">
-           <% @tests.each do |t| %>
-           <h3 class="section-heading"><%=  t.title %> Running From   <%=  t.start_date %> Till   <%=  t.end_date %></h3>
-           <p class="lead">Test Requirements: <strong> <%= t.requirements %></strong><br />
-             Instructions: <br /> <%=t.instructions %>
-             You will get a form to submit your feedback on <strong><%= t.review_date %></strong><br /><br />
+    </div>
+       <div class="col-lg-9 col-sm-12">
 
-       <% end %>
+          <% @tests.each do |t| %>
+           <% if up_coming(t.start_date) == false %>
+             <h3 class="section-heading"><%=  t.title %> Running From   <%=  t.start_date %> Till   <%=  t.end_date %></h3>
+             <p class="lead">Test Requirements: <strong> <%= t.requirements %></strong><br />
+               Instructions: <br /> <%=t.instructions %>
+               You will get a form to submit your feedback on <strong><%= t.review_date %></strong><br /><br />
+           <% end %>
+         <% end %>
    </div>
 </div>

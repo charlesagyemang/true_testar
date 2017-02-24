@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'testowners/profile'
+
+  resources :testowners do
+    resources :tests
+  end
+
+  devise_for :testowners
   get 'tests/index'
   get 'tests/new'
 
@@ -10,7 +17,7 @@ Rails.application.routes.draw do
     resources :tests
   end
 
-  devise_for :companies
+  devise_for :companies, controllers: { registrations: "registrations" }
 
   get 'refer_friends/index'
 

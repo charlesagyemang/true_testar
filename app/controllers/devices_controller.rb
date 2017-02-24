@@ -11,6 +11,7 @@ class DevicesController < ApplicationController
     @device = @context.devices.new
     @devices = context.devices
     @user = current_user
+    @tests = Test.all
   end
 
   def create

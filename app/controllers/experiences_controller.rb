@@ -11,6 +11,7 @@ class ExperiencesController < ApplicationController
     @context = context
     @experience = @context.experiences.new
     @experiences = context.experiences
+    @tests = Test.all
   end
 
   def create
@@ -28,6 +29,7 @@ class ExperiencesController < ApplicationController
     @experiences = context.experiences
     @user = current_user
     @experience = context.experiences.find(params[:id])
+    @tests = Test.all
   end
 
   def update

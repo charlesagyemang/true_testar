@@ -4,4 +4,9 @@ class CompaniesController < ApplicationController
     @company = current_company
     @tests = @company.tests
   end
+
+  def show
+    @company = current_company
+  end
+
 end

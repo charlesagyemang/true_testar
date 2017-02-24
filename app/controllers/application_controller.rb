@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
       :userdash_index
     elsif resource.class == Company
       :companies_profile
+    elsif resource.class == Testowner
+      :testowners_profile
     end
   end
 
@@ -16,6 +18,8 @@ class ApplicationController < ActionController::Base
       :userdash_index
     elsif resource.class == Company
       :companies_profile
+    elsif resource.class == Testowner
+      :testowners_profile
     end
   end
 

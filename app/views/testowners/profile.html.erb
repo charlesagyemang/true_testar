@@ -1,0 +1,35 @@
+<br /><br />
+
+<%= render 'testownerdash' %>
+<div class="well_our_two">
+        <div class="bs-callout bs-callout-danger ">
+          <div class="container">
+            <div class="col-lg-9 col-lg-offset-0 col-sm-12">
+              <span class="pull-right">
+                <%= link_to 'Create Test', new_testowner_test_path(@testowner), class: "btn btn-primary btn-danger"%>
+              </span>
+                  <h2>Tests You Have Created</h2>
+                  <% @tests.each do |t| %>
+                      <div class="well">
+                        Test Name: <%= t.title %> <br />
+                        Test Requirements: <%= t.requirements %> <br />
+                        Test Instructions: <%= t.instructions %> <br />
+                        Start Date: <%= t.start_date %> <br />
+                        End Date: <%= t.end_date %> <br />
+                        Review Date: <%= t.review_date %> <br />
+                        <div class="panel-footer">
+                               <span class="pull-right">
+                                 <%= link_to edit_testowner_test_path(@testowner, t), class:"btn btn-sm btn-warning"  do %>
+                                   <i class="glyphicon glyphicon-edit"></i></a>
+                                 <% end %>
+                                 <%= link_to "X", [@testowner, t], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-sm btn-danger" %>
+                               </span><br />
+                          </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+</div>
+
+<%= link_to "Logout",  destroy_testowner_session_path, :method => :delete %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222232525) do
+ActiveRecord::Schema.define(version: 20170224014603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,25 @@ ActiveRecord::Schema.define(version: 20170222232525) do
     t.integer  "experienceable_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "level"
     t.index ["experienceable_type", "experienceable_id"], name: "index_experiences_on_experienceable_type_and_experienceable_id", using: :btree
+  end
+
+  create_table "testowners", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_testowners_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_testowners_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "tests", force: :cascade do |t|
@@ -63,8 +81,10 @@ ActiveRecord::Schema.define(version: 20170222232525) do
     t.date     "review_date"
     t.string   "testable_type"
     t.integer  "testable_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "location"
+    t.integer  "number_of_testers"
     t.index ["testable_type", "testable_id"], name: "index_tests_on_testable_type_and_testable_id", using: :btree
   end
 

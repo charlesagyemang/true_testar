@@ -29,16 +29,16 @@
 
             <div>
               <!-- <i class="fa fa-twitter-square" aria-hidden="true"></i><%= link_to "True testar",  root_path,  class:"navbar-brand topnav" %> -->
-              <% if user_signed_in? || company_signed_in? %>
+              <% if user_signed_in? || testowner_signed_in? %>
                 <% if user_signed_in? %>
                   <%= link_to userdash_index_path, class:"navbar-brand topnav" do %>
                      <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
                      <%= "Hey " + get_firstname + " Welcome To TrueTesta" %>
                   <% end%>
-                <% elsif company_signed_in? %>
-                  <%= link_to companies_profile_path, class:"navbar-brand topnav" do %>
+                <% elsif testowner_signed_in? %>
+                  <%= link_to testowners_profile_path, class:"navbar-brand topnav" do %>
                      <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
-                     <%= "Hey " + get_company_name + " Welcome To TrueTesta" %>
+                     <%= "Hey " + get_testowner_name + " Welcome To TrueTesta" %>
                   <% end%>
                 <% end %>
               <% else %>
@@ -53,7 +53,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <% if user_signed_in? || company_signed_in? %>
+                    <% if user_signed_in? || testowner_signed_in? %>
                       <% if user_signed_in? %>
                         <li>
                             <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav" %>
@@ -61,12 +61,12 @@
                         <li>
                             <%= link_to  get_firstname , userdash_index_path,   class:"navbar-brand topnav" %>
                         </li>
-                      <% elsif company_signed_in? %>
+                      <% elsif testowner_signed_in? %>
                         <li>
                             <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav" %>
                         </li>
                         <li>
-                            <%= link_to  get_company_name , companies_profile_path,   class:"navbar-brand topnav" %>
+                            <%= link_to  get_testowner_name , testowners_profile_path,   class:"navbar-brand topnav" %>
                         </li>
                       <% end %>
 
@@ -80,7 +80,7 @@
                               <li class="navbar-brand topnav dropdown-toggle" type="button" data-toggle="dropdown">Log in
                               <span class="caret"></span></li>
                               <ul class="dropdown-menu">
-                                <li><%= link_to "As Company", new_company_session_path  %></li>
+                                <li><%= link_to "As Company", new_testowner_session_path  %></li>
                                 <li><%= link_to "As Tester", new_user_session_path %></li>
                               </ul>
                             </div>

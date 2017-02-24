@@ -52,7 +52,7 @@
 
   </div>
   <!-- /.content-section-a -->
-  <% elsif resource_name.to_s.humanize == "Company" %>
+  <% elsif resource_name.to_s.humanize == "Testowner" %>
   <a name="services"></a>
     <div class="content-section-a">
 
@@ -62,7 +62,7 @@
                 <div class="col-lg-5 col-sm-6">
 
                     <div class="col-md-12">
-                      <h2 class="section-heading">Log In With Your <%=resource_name.to_s.humanize %> Details</h2>
+                      <h2 class="section-heading">Log In With Your Company Details</h2>
                       <div class="col-md-9">
 
                         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

@@ -202,12 +202,12 @@
             <br />
             <li class="active"><a><%= get_testowner_name %> 's Dashboard<span class="sr-only">(current)</span></a></li>
             <li>
-              <%= link_to new_company_test_path(@company), class: "text_ash" do%>
+              <%= link_to new_testowner_test_path(@testowner), class: "text_ash" do%>
                 <i class="fa fa-file-text-o text_orange" ></i>  Create A Test
               <% end %>
             </li>
             <li>
-              <%= link_to company_tests_path(@company), class: "text_ash" do%>
+              <%= link_to testowner_tests_path(@testowner), class: "text_ash" do%>
                 <i class="fa fa-eye text_orange" ></i> View My Tests
               <% end %>
             </li>

@@ -7,8 +7,8 @@ module ApplicationHelper
     current_user.email[0...get_email.index('@')].to_s.capitalize
   end
 
-  def get_company_name
-    current_company.email[0...current_company.email.index('@')].to_s.capitalize
+  def get_testowner_name
+    current_testowner.email[0...current_testowner.email.index('@')].to_s.capitalize
   end
 
 
@@ -89,4 +89,17 @@ module ApplicationHelper
   def get_day
     get_today.to_s[8...10]
   end
+
+  def compare_dates(date)
+  (Date.today - date).to_i
+  end
+
+  def up_coming (date)
+    if (compare_dates (date)).to_i < 0
+      true
+    else
+      false
+    end
+  end
+
 end

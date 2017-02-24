@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+
   // var user_url = "";
   // var admin_url = "";
 

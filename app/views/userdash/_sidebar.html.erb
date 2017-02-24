@@ -1,3 +1,12 @@
+<% on_going_array, up_coming_array = [], [] %>
+<% @tests.each do |t| %>
+  <% if up_coming(t.start_date) == true %>
+    <% up_coming_array.push(t.title) %>
+  <% else %>
+    <% on_going_array.push(t.title) %>
+  <% end %>
+<% end %>
+
 <div class="col-sm-3">
 
       <% if user_signed_in? %>
@@ -8,7 +17,7 @@
     <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
         <li class="">
             <%= link_to on_going_tests_index_path  do%>
-              <i class="fa fa-flask"></i>  On Going Tests  <span class="label label-info pull-right inbox-notification"><%= @tests.count %></span>
+              <i class="fa fa-flask"></i>  On Going Tests  <span class="label label-info pull-right inbox-notification"><%= on_going_array.count %></span>
             <% end %>
         </li>
         <li>
@@ -20,7 +29,7 @@
 
         <li>
             <%= link_to up_coming_tests_index_path  do%>
-              <i class="fa fa-certificate"></i>  Up Coming Tests  <span class="label label-info pull-right inbox-notification"></span>
+              <i class="fa fa-certificate"></i>  Up Coming Tests  <span class="label label-info pull-right inbox-notification"><%= up_coming_array.count %></span>
             <% end %>
         </li>
 

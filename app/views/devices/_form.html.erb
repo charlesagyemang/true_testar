@@ -5,19 +5,30 @@
                   <div class="row">
                       <%= form_for [@context, @device] do |f| %>
                         <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label     :device_name %>
-                          <%= f.text_field :device_name, class:"form-control", placeholder:"eg. iPhone" %>
+                          <%= f.label      :device_name %>
+                          <%= f.text_field :device_name, class:"form-control", placeholder:"eg. iPhone7 plus" %>
                         </div>
                         <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label     :device_type %>
-                          <%= f.text_field :device_type, class:"form-control", placeholder:"eg. 7plus" %>
+                          <%= f.label      :device_type %>
+                          <%= f.select     :device_type, [ "Android Device",
+                                                           "Apple   Device",
+                                                           "Windows Device",
+
+                                                          ],
+                                                          class:"form-control"%>
                         </div>
                         <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label     :device_os %>
-                          <%= f.text_field :device_os, class:"form-control" , placeholder:"eg. iOS" %>
+                          <%= f.label      "Which Devise?" %>
+                          <%= f.select      :device_os, [ "Phone",
+                                                          "Pc",
+                                                          "Tablet",
+                                                          "Wearable"
+
+                                                          ],
+                                                          class:"form-control" %>
                         </div>
                         <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label     :os_version %>
+                          <%= f.label      "Device OS Version" %>
                           <%= f.text_field :os_version, class:"form-control" , placeholder:"eg. 10.3" %>
                         </div>
                         <div class="form-group col-xs-12 col-md-12">

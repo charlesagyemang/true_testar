@@ -1,6 +1,6 @@
 <br /><br />
 <%= render 'companies/dasher' %>
-<div class="bs-callout bs-callout-danger well_our">
+<div class="bs-callout bs-callout-danger well_our full">
   <div class="container">
     <div class="col-lg-9 col-lg-offset-0 col-sm-12">
       <span class="pull-right">
@@ -12,10 +12,13 @@
               <div class="well">
                 Test Name: <%= t.title %> <br />
                 Test Requirements: <%= t.requirements %> <br />
+                Location Of Testers : <%= t.location %> <br />
+                Number Of Testers: <%= t.number_of_testers %><br />
                 Test Instructions: <%= t.instructions %> <br />
                 Start Date: <%= t.start_date %> <br />
                 End Date: <%= t.end_date %> <br />
                 Review Date: <%= t.review_date %> <br />
+
                 <div class="panel-footer">
                        <span class="pull-right">
                          <%= link_to edit_company_test_path(@company, t), class:"btn btn-sm btn-warning"  do %>
