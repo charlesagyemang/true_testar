@@ -102,4 +102,62 @@ module ApplicationHelper
     end
   end
 
+  def link_recorgnizer (string)
+  	www_index  = string.index('www.')
+  	http_index = string.index('http')
+  	com_index  = string.index('.com')
+  	org_index  = string.index('.org')
+  	net_index  = string.index('.net')
+
+  	if http_index || www_index
+  		if com_index || net_index || org_index
+  			if com_index
+  				if http_index
+  					if string[http_index..com_index + 4][-1] == "."
+  						string[http_index..com_index + 6]
+  					else
+  					 	string[http_index..com_index + 3]
+  					end
+  				elsif www_index
+  					if string[www_index..com_index + 4][-1] == "."
+  						"http://" + string[www_index..com_index + 6]
+  					else
+  					 	"http://" + string[www_index..com_index + 3]
+  					end
+  				end
+  			elsif net_index
+  				if http_index
+  					if string[http_index..net_index + 4][-1] == "."
+  						string[http_index..net_index + 6]
+  					else
+  					 	string[http_index..net_index + 3]
+  					end
+  				elsif www_index
+  					if string[www_index..net_index + 4][-1] == "."
+  						"http://" + string[www_index..net_index + 6]
+  					else
+  					 	"http://" + string[www_index..net_index + 3]
+  					end
+  				end
+  			elsif org_index
+  				if http_index
+  					if string[http_index..org_index + 4][-1] == "."
+  						string[http_index..org_index + 6]
+  					else
+  					 	string[http_index..org_index + 3]
+  					end
+  				elsif www_index
+  					string[www_index..org_index + 3]
+  					if string[www_index..org_index + 4][-1] == "."
+  						"http://" + string[www_index..org_index + 6]
+  					else
+  					 	"http://" + string[www_index..org_index + 3]
+  					end
+  				end
+  			end
+  		end
+  	else
+  		"#"
+  	end
+  end
 end

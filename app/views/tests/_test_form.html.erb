@@ -10,33 +10,73 @@
                     <%= f.text_field :title, class:"form-control", placeholder:"Test Title" %>
                   </div>
                   <div class="form-group col-xs-12 col-md-12">
-                    <%= f.label      :requirements %>
-                    <%= f.select     :requirements,  [
-                                                        'Android Device',
-                                                        'Apple   Device',
-                                                        'windows Device',
-                                                        'Any Browser',
-                                                        'Safari Browser',
-                                                        'Chrome Browser',
-                                                        'Firefox Browser'
-                                                       ],  class: "form-control" %>
+                    <%= f.label  "Device Requirements" %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Android Device', checked_req('Android Device'), id: 'requirements_android' %>
+                    <%= label_tag 'requirements_android', 'Android Device' %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Apple Device', checked_req('Apple Device'), id: 'requirements_apple' %>
+                    <%= label_tag 'requirements_apple', 'Apple Device' %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Windows Device', checked_req('Windows Device'), id: 'requirements_windows' %>
+                    <%= label_tag 'requirements_windows', 'Windows Device' %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Any Browser',  checked_req('Any Browser'), id: 'requirements_any_browser' %>
+                    <%= label_tag 'requirements_any_browser', 'Any Browser' %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Safari Browser', checked_req('Safari Browser'), id: 'requirements_safari' %>
+                    <%= label_tag 'requirements_safari', 'Safari Browser' %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Chrome Browser', checked_req('Chrome Browser'), id: 'requirements_chrome' %>
+                    <%= label_tag 'requirements_chrome', 'Chrome Browser' %><br />
+
+               	    <%= check_box_tag 'test[requirements][]', 'Firefox Browser', checked_req('Firefox Browser'), id: 'requirements_firefox' %>
+                    <%= label_tag 'requirements_firefox', 'Firefox Browser' %><br />
                   </div>
+
                   <div class="form-group col-xs-12 col-md-12">
-                    <%= f.label      "Location of testers" %>
-                    <%= f.select     :location,  [
-                                                        'The Whole Of Ghana',
-                                                        'Greater Accra Region',
-                                                        'Ashanti Region',
-                                                        'Eastern Region',
-                                                        'Northern Region',
-                                                        'Central Region',
-                                                        'Western Region',
-                                                        'Upper East Region',
-                                                        'Upper West Region',
-                                                        'Brong Ahafo Region',
-                                                        'Volta Region'
-                                                       ],  class: "form-control" %>
+
+                     <%= f.label  "Location Of Testers" %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'All Of Ghana', checked_loc('All Of Ghana'), id: 'location_ghana' %>
+                     <%= label_tag 'location_ghana', 'All Of Ghana' %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'Greater Accra Region', checked_loc('Greater Accra Region'), id: 'location_accra' %>
+                     <%= label_tag 'location_accra', 'Greater Accra Region' %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'Ashanti Region', checked_loc('Ashanti Region'), id: 'location_ashanti' %>
+                     <%= label_tag 'location_ashanti', 'Ashanti Region' %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'Eastern Region',  checked_loc('Eastern Region'), id: 'location_eastern' %>
+                     <%= label_tag 'location_any_eastern', 'Eastern Region' %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'Northern Region', checked_loc('Northern Region'), id: 'location_northern' %>
+                     <%= label_tag 'location_northern', 'Northern Region' %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'Central Region', checked_loc('Central Region'), id: 'location_central' %>
+                     <%= label_tag 'location_central', 'Central Region' %><br />
+
+                	   <%= check_box_tag 'test[location][]', 'Western Region', checked_loc('Western Region'), id: 'location_western' %>
+                     <%= label_tag 'location_western', 'Western Region' %><br />
+
+                     <%= check_box_tag 'test[location][]', 'Upper East Region', checked_loc('Upper East Region'), id: 'location_upper_east' %>
+                     <%= label_tag 'location_upper_east', 'Upper East Region' %><br />
+
+                     <%= check_box_tag 'test[location][]', 'Upper West Region', checked_loc('Upper West Region'), id: 'location_upper_west' %>
+                     <%= label_tag 'location_upper_west', 'Upper West Region' %><br />
+
+                     <%= check_box_tag 'test[location][]', 'Western Region', checked_loc('Brong Ahafo Region'), id: 'location_brong_ahafo' %>
+                     <%= label_tag 'location_brong_ahafo', 'Western Region' %><br />
+
+                     <%= check_box_tag 'test[location][]', 'Brong Ahafo Region', checked_loc('Western Region'), id: 'location_western' %>
+                     <%= label_tag 'location_western', 'Brong Ahafo Region' %><br />
+
+                     <%= check_box_tag 'test[location][]', 'Volta Region', checked_loc('Volta Region'), id: 'location_volta' %>
+                     <%= label_tag 'location_volta', 'Volta Region' %><br />
+
                   </div>
+
+
 
                   <div class="form-group col-xs-12 col-md-12">
                     <%= f.label      :number_of_testers %>
@@ -46,7 +86,7 @@
                                                          50,
                                                          70,
                                                          100,
-                                                       ],  class: "form-control" %>
+                                                        ],  class: "form-control" %>
                   </div>
                   <div class="form-group col-xs-12 col-md-12">
                     <%= f.label      :instructions %>

@@ -48,10 +48,10 @@ class TestsController < ApplicationController
 
   private
     def test_params
-      params.require(:test).permit(:title,        :requirements,
-                                   :instructions, :start_date,
-                                   :end_date,     :review_date,
-                                   :review_date,  :location,
-                                   :number_of_testers)
+      params.require(:test).permit(:title,             :instructions,
+                                   :start_date,        :end_date,
+                                   :review_date,       :review_date,
+                                   :number_of_testers, requirements:[], 
+                                   location:[])
     end
 end
