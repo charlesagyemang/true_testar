@@ -2,82 +2,90 @@
 <html>
   <head>
     <title>True Testar</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://blackrockdigital.github.io/startbootstrap-landing-page/css/landing-page.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+  <link rel="stylesheet" type="text/css" href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <br/><br />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdn.smooch.io/smooch.min.js"></script><script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.smooch.io/smooch.min.js"></script>
+    <script>
       Smooch.init({ appToken: 'dh3jt17nxehqty9z4hdrdxcjn' });
-   </script>
+    </script>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-  		<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
+  		<nav class="navbar navbar-inverse navbar-fixed-top topnav" style="background-color:#d26e21; ">
+        <div class="container" style="background-color:#d26e21; height:5% ">
+
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <div class="navbar-header pull-right">
+                <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#expand-nav" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
+            </div>
             <div>
-              <!-- <i class="fa fa-twitter-square" aria-hidden="true"></i><%= link_to "True testar",  root_path,  class:"navbar-brand topnav" %> -->
-              <% if user_signed_in? || testowner_signed_in? %>
+              <% if user_signed_in? || company_signed_in? %>
                 <% if user_signed_in? %>
                   <%= link_to userdash_index_path, class:"navbar-brand topnav" do %>
                      <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
                      <%= "Hey " + get_firstname + " Welcome To TrueTesta" %>
                   <% end%>
-                <% elsif testowner_signed_in? %>
-                  <%= link_to testowners_profile_path, class:"navbar-brand topnav" do %>
+                <% elsif company_signed_in? %>
+                  <%= link_to companies_profile_path, class:"navbar-brand topnav" do %>
                      <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
-                     <%= "Hey " + get_testowner_name + " Welcome To TrueTesta" %>
+                     <%= "Hey " + current_company.email + " Welcome To TrueTesta" %>
                   <% end%>
                 <% end %>
               <% else %>
                 <%= link_to root_path, class:"navbar-brand topnav" do %>
-                   <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
-                   True Testar
+                   <!-- <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="100%" height="100%"/></span> -->
+                  <b><span class="text" style="color:white">TRUE TESTAR</span></b>
                 <% end%>
               <% end %>
             </div>
 
-            </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+            <div class="collapse navbar-collapse navbar-right" id="expand-nav">
+                <ul class="nav navbar-nav navbar-left">
                     <% if user_signed_in? || testowner_signed_in? %>
                       <% if user_signed_in? %>
-                        <li>
-                            <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav" %>
-                        </li>
+
+                         <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:30px;color:white;"%>
+
                         <li>
                             <%= link_to  get_firstname , userdash_index_path,   class:"navbar-brand topnav" %>
                         </li>
                       <% elsif testowner_signed_in? %>
+
+                         <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:30px;color:white;" %>
+
                         <li>
-                            <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav" %>
-                        </li>
-                        <li>
-                            <%= link_to  get_testowner_name , testowners_profile_path,   class:"navbar-brand topnav" %>
+                            <%= link_to  current_testowner.email , testowners_profile_path,   class:"navbar-brand topnav", style:"font-size:20px;color:white;" %>
                         </li>
                       <% end %>
 
 
                     <% else %>
-                    <li>
-                          <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav" %>
-                    </li>
+
+                    <b>     <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav text1", style:"font-size:20px;color:white;"%></b>
+
                       <li>
                             <div class="dropdown">
-                              <li class="navbar-brand topnav dropdown-toggle" type="button" data-toggle="dropdown">Log in
+
+                              <li class="navbar-brand topnav dropdown-toggle" data-toggle="dropdown"> <b><span class="text1" style="color:white;">Login</span></b>
                               <span class="caret"></span></li>
                               <ul class="dropdown-menu">
                                 <li><%= link_to "As Company", new_testowner_session_path  %></li>
@@ -99,19 +107,59 @@
     </nav><br /><br />
 
 
-    <%= yield %>
+  <%= yield %>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-lg-12 bs-footer footer text-centere">
+      <div class="" role="contentinfo">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-2">
+            <h4>Location</h4>
+            <p>20 Aluguntugui, East Legon
+            <br>Accra, Ghana</p>
+          </div>
+          <div class="col-lg-2">
+            <h4>Around the Web</h4>
+            <ul class="list-inline" >
+              <li>
+                  <a href="https://twitter.com/truetestar" target="_blank"> <i class="fa fa-twitter social" ></i></a>
+              </li>
+              <li>
+                <a href="https://facebook.com/truetestar" target="_blank"> <i class="fa fa-facebook social"></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/truetestar" target="_blank"> <i class="fa fa-envelope social"></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/truetestar" target="_blank"> <i class="fa fa-youtube-square social"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2">
+            <h4>Resources</h4>
+          </div>
+          <div class="footer-col col-md-2">
+            <h4>About TrueTestar</h4>
+              <p>A crowdsourced testing platform</p>
+          </div>
+          <div class="col-lg-2"></div>
+      </div>
+    </div>
+        </div>
+      </div>
+      <div class="col-lg-12 text-center">
+         <p>True Testar © 2017, All rights reserved</p>
+      </div>
 
-    <footer class="bs-footer" role="contentinfo">
-            <div class="container shade_one_on">
-              <p>truetestar.com © 2017 <a href="https://twitter.com/truetestar" target="_blank"> <i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter </a> |
-                                       <a href="https://www.facebook.com/truetestar/?fref=ts" target="_blank"> <i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook </a>
-                                       <!-- <a href="https://guarded-cliffs-20356.herokuapp.com/userdash/index" target="_blank"> <i class="fa fa-youtube" aria-hidden="true"></i> Youtube </a> | -->
-            </div>
-          <style>
-          ._fancybar{margin-top:50px !important;z-index: 5}
-          </style>
-          <script async="" type="text/javascript" src="//cdn.fancybar.net/ac/fancybar.js?zoneid=1502&amp;serve=C6ADVKE&amp;placement=danstools" id="_fancybar_js"></script>
 
-  </footer>
+    </div>
+
+
+
+          </div>
+  </div>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+
   </body>
 </html>

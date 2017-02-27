@@ -5,16 +5,82 @@
 .banner2{
   padding: 100px 0;
   color: #f8f8f8;
-  background: url(image_path('banner-bg.jpg')) no-repeat center center;
+  background: url(image_path('lacalization.png')) no-repeat center center;
   background-size: cover;
 }
 
 .intro_header2{
-  padding-top: 50px;
   /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   text-align: center;
   color: #f8f8f8;
-  background: url(image_path('headerimage.png')) no-repeat center center;
+  background: url(image_path('baq.png')) no-repeat center center;
   background-size: cover;
+  height: 700px !important;
+
+}
+
+.intro-message {
+  margin-top: 80%;
+
+  color: #FF5733;
+
+}
+
+
+nav a{
+  color: #fff;
+}
+
+.position {
+  padding-top:13%;
+}
+.position1 {
+  padding-top:8%;
+}
+
+.message1 {
+  font-size:40px;
+  color:#212121;
+  font-family: Raleway;
+}
+.message2 {
+  font-size:20px;
+  color:#212121;
+  font-family: Raleway;
+  text-align: center;
+}
+.message3 {
+  font-size:50px;
+  color:#212121;
+  font-family: Raleway;
+  text-align: center;
+}
+.sign {
+  font-size:30px;
+  color:#ff6200;
+  font-family: Raleway;
+}
+
+.banner-title {
+  padding-bottom:50%;
+}
+
+.social {
+  color: #212121;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img {
+   position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
