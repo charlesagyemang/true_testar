@@ -52,7 +52,7 @@
               <% else %>
                 <%= link_to root_path, class:"navbar-brand topnav" do %>
                    <!-- <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="100%" height="100%"/></span> -->
-                  <b><span class="text" style="color:white">TRUE TESTAR</span></b>
+                  <b><span class="text navbar-inverse navbar-brand">TRUE TESTAR</span></b>
                 <% end%>
               <% end %>
             </div>
@@ -62,26 +62,27 @@
                 <ul class="nav navbar-nav navbar-left">
                     <% if user_signed_in? || testowner_signed_in? %>
                       <% if user_signed_in? %>
-
-                         <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:30px;color:white;"%>
-
+                      <li>
+                         <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:25px;color:white;"%>
+                      </li>
                         <li>
-                            <%= link_to  get_firstname , userdash_index_path,   class:"navbar-brand topnav" %>
+                            <%= link_to  get_firstname , userdash_index_path,   class:"navbar-brand topnav", style:"font-size:25px;color:white;" %>
                         </li>
                       <% elsif testowner_signed_in? %>
-
-                         <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:30px;color:white;" %>
-
+                      <li>
+                         <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:25px;color:white;" %>
+                      </li>
                         <li>
-                            <%= link_to  current_testowner.email , testowners_profile_path,   class:"navbar-brand topnav", style:"font-size:20px;color:white;" %>
+                            <%= link_to  current_testowner.email , testowners_profile_path,   class:"navbar-brand topnav", style:"font-size:25px;color:white;" %>
                         </li>
                       <% end %>
 
 
                     <% else %>
 
-                    <b>     <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav text1", style:"font-size:20px;color:white;"%></b>
-
+                  <li>
+                   <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav text1", style:"font-size:20px;color:white;"%>
+                 </li>
                       <li>
                             <div class="dropdown">
 
