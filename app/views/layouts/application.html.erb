@@ -44,13 +44,13 @@
                   <% end%>
                 <% elsif testowner_signed_in? %>
                   <%= link_to testowners_profile_path, class:"navbar-brand topnav" do %>
-                     <%= current_company.email + " Welcome To TrueTesta" %>
+                     <%= current_testowner.email + " Welcome To TrueTesta" %>
                   <% end%>
                 <% end %>
               <% else %>
                 <%= link_to root_path, class:"navbar-brand topnav" do %>
                    <!-- <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="100%" height="100%"/></span> -->
-                  <b><span style="font-size:25px;color:white;">True testar</span></b>
+                  <b><span style="font-size:25px;color:white;">True Testar</span></b>
                 <% end%>
               <% end %>
             </div>
@@ -71,29 +71,24 @@
                          <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav", style:"font-size:25px;color:white;" %>
                       </li>
                         <li>
-                            <%= link_to  current_testowner.email , testowners_profile_path,   class:"navbar-brand topnav", style:"font-size:25px;color:white;" %>
+                            <%= link_to  get_testowner_name, testowners_profile_path,   class:"navbar-brand topnav", style:"font-size:25px;color:white;" %>
                         </li>
                       <% end %>
 
-
                     <% else %>
-
-                  <li>
-                   <%= link_to  "FAQ", faq_index_path, class:"navbar-brand topnav text1", style:"font-size:20px;color:white;"%>
-                 </li>
-                      <li>
-                            <div class="dropdown">
-
-                              <li class="navbar-brand topnav dropdown-toggle" data-toggle="dropdown"> <b><span class="text1" style="color:white;">Login</span></b>
-                              <span class="caret"></span></li>
-                              <ul class="dropdown-menu">
-                                <li><%= link_to "As Company", new_testowner_session_path  %></li>
-                                <li><%= link_to "As Tester", new_user_session_path %></li>
-                              </ul>
-                            </div>
-                      </li>
-
-
+                        <li>
+                           <%= link_to  "FAQ", faq_index_path, class:"text1", style:"font-size:25px;color:white;"%>
+                        </li>
+                        <li>
+                              <div class="dropdown">
+                                <li class="navbar-brand topnav dropdown-toggle" data-toggle="dropdown"> <b><span class="text1" style="font-size:25px;color:white;">Login</span></b>
+                                <span class="caret"></span></li>
+                                <ul class="dropdown-menu">
+                                  <li><%= link_to "As Company", new_testowner_session_path  %></li>
+                                  <li><%= link_to "As Tester", new_user_session_path %></li>
+                                </ul>
+                              </div>
+                        </li>
                     <% end %>
                     <!-- <li>
                         <%= link_to "Contact", contact_index_path, class:"navbar-brand topnav" %>

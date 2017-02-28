@@ -160,4 +160,17 @@ module ApplicationHelper
   		"#"
   	end
   end
+
+  def check_full_link (link)
+  	last_com = link.index(link_recorgnizer(link))
+  	nexter = link[last_com + last_com + 1]
+  	if nexter === "/"
+  		start = link.index(nexter)
+  		rack  = link[start..-1]
+  		space = rack.index(" ")
+  		link [last_com..space + last_com + last_com]
+  	else
+  		link_recorgnizer(link)
+  	end
+  end
 end

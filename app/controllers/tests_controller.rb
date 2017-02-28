@@ -11,6 +11,7 @@ class TestsController < ApplicationController
     @test = @context.tests.new
     @tests = @context.tests
     @company = current_testowner
+    @testowner = current_testowner
   end
 
   def create
@@ -51,7 +52,7 @@ class TestsController < ApplicationController
       params.require(:test).permit(:title,             :instructions,
                                    :start_date,        :end_date,
                                    :review_date,       :review_date,
-                                   :number_of_testers, requirements:[], 
+                                   :number_of_testers, requirements:[],
                                    location:[])
     end
 end
