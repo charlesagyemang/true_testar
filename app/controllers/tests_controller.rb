@@ -30,6 +30,7 @@ class TestsController < ApplicationController
     @tests = @context.tests
     @company = current_testowner
     @test = @context.tests.find(params[:id])
+    @testowner = current_testowner
   end
 
   def update

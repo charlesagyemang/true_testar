@@ -23,7 +23,7 @@
            <% if up_coming(t.start_date) == false %>
              <h3 class="section-heading"><%=  t.title %> Running From   <%=  t.start_date %> Till   <%=  t.end_date %></h3>
              <p class="lead">Test Requirements:<br /> <strong> <%= t.requirements %></strong><br />
-               Instructions: <br /><% link = check_full_link(t.instructions) %>  <%=t.instructions %><br /> <a href="<%= link %>" target="_blank">link</a>
+               Instructions: <br /> <%=t.instructions %><br />
                You will get a form to submit your feedback on <strong><%= t.review_date %></strong><br /><br />
 
              </p>
