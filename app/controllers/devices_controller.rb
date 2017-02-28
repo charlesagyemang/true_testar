@@ -29,6 +29,7 @@ class DevicesController < ApplicationController
     @devices = context.devices
     @user = current_user
     @device = context.devices.find(params[:id])
+    @tests = Test.all
   end
 
   def update
