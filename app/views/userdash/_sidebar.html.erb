@@ -1,3 +1,4 @@
+
 <% on_going_array, up_coming_array = [], [] %>
 <% @tests.each do |t| %>
   <% if up_coming(t.start_date) == true %>
@@ -7,45 +8,59 @@
   <% end %>
 <% end %>
 
-<div class="col-sm-3">
+<div class="col-sm-3 side">
 
       <% if user_signed_in? %>
-        <h4><%= link_to  get_firstname + "'s DashBoard" , userdash_index_path, class:"btn btn-default btn-block btn-compose-email "  %></h4>
+        <h4><%= link_to  get_firstname , userdash_index_path, class:"btn btn-default btn-block btn-compose-email"  %></h4>
       <% end %>
 
-      <h4 class="nav-email-subtitle">General</h4>
+      <h4 class="nav-email-subtitle"><b>General</b></h4>
     <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
-        <li class="">
-            <%= link_to on_going_tests_index_path  do%>
-              <i class="fa fa-flask"></i>  On Going Tests  <span class="label label-info pull-right inbox-notification"><%= on_going_array.count %></span>
-            <% end %>
-        </li>
+
         <li>
-
-            <%= link_to userdash_index_path  do%>
-              <i class="fa fa-envelope-o"></i> Announcements
+            <%= link_to userdash_profile_path  do%>
+              <i class="fa fa-user"></i> Profile
             <% end %>
         </li>
-
         <li>
             <%= link_to up_coming_tests_index_path  do%>
               <i class="fa fa-certificate"></i>  Up Coming Tests  <span class="label label-info pull-right inbox-notification"><%= up_coming_array.count %></span>
             <% end %>
         </li>
-
+        <li class="">
+            <%= link_to on_going_tests_index_path  do%>
+              <i class="fa fa-flask"></i>  On Going Tests  <span class="label label-info pull-right inbox-notification">1</span>
+            <% end %>
+        </li>
         <li>
             <%= link_to communities_index_path  do%>
               <i class="fa fa-user"></i> Community
             <% end %>
         </li>
         <li>
-            <%= link_to userdash_profile_path  do%>
-              <i class="fa fa-user"></i> Profile
+            <%= link_to userdash_index_path  do%>
+              <i class="fa fa-envelope-o"></i> Announcements
             <% end %>
+        </li>
+
+
+
+    </ul><!-- /.nav -->
+    <h4 class="nav-email-subtitle"><b>Testing Profile</b></h4>
+    <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+        <li>
+            <%= link_to user_devices_path(@user)  do%>
+              <i class="fa fa-gamepad"></i> My Devices
+            <% end %>
+        </li>
+        <li>
+          <%= link_to user_experiences_path(@user)  do%>
+            <i class="fa fa-binoculars"></i> Experiences And Biases
+          <% end %>
         </li>
     </ul><!-- /.nav -->
 
-    <h4 class="nav-email-subtitle">Points</h4>
+    <h4 class="nav-email-subtitle"><b>Points</b></h4>
     <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
         <li>
             <%= link_to  points_my_points_path  do %>
@@ -64,17 +79,5 @@
         </li>
     </ul><!-- /.nav -->
 
-    <h4 class="nav-email-subtitle">Testing Profile</h4>
-    <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
-        <li>
-            <%= link_to user_devices_path(@user)  do%>
-              <i class="fa fa-gamepad"></i> My Devices
-            <% end %>
-        </li>
-        <li>
-          <%= link_to user_experiences_path(@user)  do%>
-            <i class="fa fa-binoculars"></i> Experinces And Biases
-          <% end %>
-        </li>
-    </ul><!-- /.nav -->
+
 </div>
