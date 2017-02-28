@@ -40,13 +40,11 @@
               <% if user_signed_in? || company_signed_in? %>
                 <% if user_signed_in? %>
                   <%= link_to userdash_index_path, class:"navbar-brand topnav" do %>
-                     <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
-                     <%= "Hey " + get_firstname + " Welcome To TrueTesta" %>
+                     <%= get_firstname + " Welcome To TrueTesta" %>
                   <% end%>
-                <% elsif company_signed_in? %>
-                  <%= link_to companies_profile_path, class:"navbar-brand topnav" do %>
-                     <span><img src="<%= asset_path( 'logoreal.png' ) %>" width="35px" height="25px"/></span>
-                     <%= "Hey " + current_company.email + " Welcome To TrueTesta" %>
+                <% elsif testowner_signed_in? %>
+                  <%= link_to testowners_profile_path, class:"navbar-brand topnav" do %>
+                     <%= current_company.email + " Welcome To TrueTesta" %>
                   <% end%>
                 <% end %>
               <% else %>
