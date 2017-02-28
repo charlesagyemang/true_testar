@@ -1,5 +1,6 @@
 <br /> <br />
 
+<div class="container-fluid">
 <% if resource_name.to_s.humanize == "User" %>
 
 <a name="services"></a>
@@ -38,7 +39,7 @@
 
 
                         <div class="form-group">
-                          <%= f.submit "Sign up", class: "btn btn-primary" %>
+                          <%= f.submit "Sign up", class: "btn btn-default" %>
                         </div>
                         <%= render "devise/shared/links" %>
                     </div>
@@ -94,7 +95,7 @@
 
 
                           <div class="form-group">
-                            <%= f.submit "Sign up", class: "btn btn-primary" %>
+                            <%= f.submit "Sign up", class: "btn btn-default" %>
                           </div>
                           <%= render "devise/shared/links" %>
                       </div>
@@ -149,7 +150,7 @@
 
 
                             <div class="form-group">
-                              <%= f.submit "Sign up", class: "btn btn-primary" %>
+                              <%= f.submit "Sign up", class: "btn btn-default" %>
                             </div>
                             <%= render "devise/shared/links" %>
                         </div>
@@ -167,3 +168,4 @@
       </div>
 
   <% end %>
+</div>

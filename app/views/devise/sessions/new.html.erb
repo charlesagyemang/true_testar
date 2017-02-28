@@ -1,5 +1,6 @@
-<br /><br />
 
+
+<div class="container-fluid">
 <% if resource_name.to_s.humanize == "User" %>
 <a name="services"></a>
   <div class="content-section-a">
@@ -34,7 +35,7 @@
                         <% end %>
 
                         <div class="form-group">
-                          <%= f.submit "Log in", class: "btn btn-primary" %>
+                          <%= f.submit "Log in", class: "btn btn-default" %>
                         </div>
                       <% end %>
 
@@ -86,7 +87,7 @@
                           <% end %>
 
                           <div class="form-group">
-                            <%= f.submit "Log in", class: "btn btn-primary" %>
+                            <%= f.submit "Log in", class: "btn btn-default" %>
                           </div>
                         <% end %>
 
@@ -105,3 +106,5 @@
     </div>
     <!-- /.content-section-a -->
   <% end %>
+
+</div>
