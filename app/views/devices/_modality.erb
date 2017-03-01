@@ -1,0 +1,62 @@
+
+         <div class="modal fade" id="myModal" role="dialog">
+           <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-1 col-sm-1"></div>
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <h2> Add A New Device</h2>
+                        <div class="row">
+                            <%= form_for [@context, @device] do |f| %>
+                            <% @device.errors.full_messages.each do |msg| %>
+                              <p><%= msg %></p>
+                            <% end %>
+                              <div class="form-group col-xs-12 col-md-12">
+                                <%= f.label      :device_name %>
+                                <%= f.text_field :device_name, class:"form-control", placeholder:"eg. iPhone7 plus",  :required => 'required' %>
+                              </div>
+                              <div class="form-group col-xs-12 col-md-12">
+                                <%= f.label      :device_type %>
+                                <%= f.select     :device_type, [ "Android Device",
+                                                                 "Apple   Device",
+                                                                 "Windows Device",
+
+                                                                ],
+                                                                class:"form-control"%>
+                              </div>
+                              <div class="form-group col-xs-12 col-md-12">
+                                <%= f.label      "Which Device?" %>
+                                <%= f.select      :device_os, [ "Phone",
+                                                                "Pc",
+                                                                "Tablet",
+                                                                "Wearable"
+
+                                                                ],
+                                                                class:"form-control"%>
+                              </div>
+                              <div class="form-group col-xs-12 col-md-12">
+                                <%= f.label      "Device OS Version" %>
+                                <%= f.text_field :os_version, class:"form-control" , placeholder:"eg. 10.3" %>
+                              </div>
+                              <div class="form-group col-xs-12 col-md-12">
+                              <%= f.submit "Add Device", class: "btn btn-default" %>
+                             </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-6"></div>
+                </div>
+            </div>
+
+          </div>
+
+    </div>
+  </div>
+</div>
+</div>

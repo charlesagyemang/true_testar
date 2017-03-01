@@ -1,0 +1,32 @@
+<div class="col-sm-3 side">
+      <% if user_signed_in? %>
+        <h3><%= link_to  get_firstname , userdash_index_path, class:"btn btn-default btn-block btn-compose-email"  %></h4>
+      <% end %>
+
+      <h4 class="nav-email-subtitle"><b>My DashBoard</b></h4>
+    <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+
+        <li>
+            <%= link_to new_testowner_test_path(@testowner)  do%>
+              <i class="fa fa-file-text-o "></i> Create a test
+            <% end %>
+        </li>
+        <li>
+            <%= link_to testowner_tests_path(@testowner)  do%>
+              <i class="fa fa-eye"></i>  View tests <span class="label label-info pull-right inbox-notification"></span>
+            <% end %>
+        </li>
+        <li class="">
+            <%= link_to on_going_tests_index_path  do%>
+              <i class="fa fa-download"></i> Download report  <span class="label label-info pull-right inbox-notification"></span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to "log out", destroy_testowner_session_path, method: :delete %>
+        </li>
+
+
+    </ul><!-- /.nav -->
+
+
+</div>
