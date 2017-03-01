@@ -1,32 +1,38 @@
-<br /><br />
 
-<div class="container-fluid">
+
+<div class="full" >
   <%= render 'ownerdash' %>
-        <div class="well_our full">
-          <div class="container">
-            <div class="col-lg-9 col-lg-offset-0 col-sm-12">
-              <span class="pull-right">
-                <%= link_to 'Create Test', new_testowner_test_path(@testowner), class: "btn btn-default"%>
-              </span>
-                  <h2>Tests You Have Created</h2>
-                  <% @tests.each do |t| %>
-                      <div class="well">
-                        Test Name: <%= t.title %> <br />
-                        Test Requirements: <%= t.requirements %> <br />
-                        Test Instructions: <%= t.instructions %> <br />
-                        Start Date: <%= t.start_date %> <br />
-                        End Date: <%= t.end_date %> <br />
-                        Review Date: <%= t.review_date %> <br />
-                               <span class="pull-right">
-                                 <%= link_to edit_testowner_test_path(@testowner, t), class:"btn btn-default"  do %>
-                                   <i class="glyphicon glyphicon-edit"></i></a>
-                                 <% end %>
-                                 <%= link_to "X", [@testowner, t], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-default" %>
-                               </span><br /><br />
 
-                    </div>
-                <% end %>
-              </div>
+    <div class="col-sm-9 ">
+      <br />
+               <div class="bs-callout shade_oneee ">
+                 <div class=" full">
+                   <div class="container">
+                     <div class="col-lg-9 col-lg-offset-0 col-sm-6">
+                       <span class="pull-right">
+                         <!-- <%= link_to 'Create Test', new_testowner_test_path(@testowner), class: "btn btn-default"%> -->
+                         <%= link_to "Book Now","#myModal", {  data: {toggle: "modal"}} %>
+                       </span>
+                           <h2>Tests You Have Created</h2>
+                           <% @tests.each do |t| %>
+                               <div class="well">
+                                 Test Name: <%= t.title %> <br />
+                                 Test Requirements: <%= t.requirements %> <br />
+                                 Test Instructions: <%= t.instructions %> <br />
+                                 Start Date: <%= t.start_date %> <br />
+                                 End Date: <%= t.end_date %> <br />
+                                 Review Date: <%= t.review_date %> <br />
+                                        <span class="pull-right">
+                                          <%= link_to edit_testowner_test_path(@testowner, t), class:"btn btn-default"  do %>
+                                            <i class="glyphicon glyphicon-edit"></i></a>
+                                          <% end %>
+                                          <%= link_to "X", [@testowner, t], method: :delete, data:  {confirm: 'Are you sure?'}, class:"btn btn-default" %>
+                                        </span><br /><br />
+
+                             </div>
+                         <% end %>
+                       </div>
+                     </div>
+                   </div>
             </div>
-          </div>
 </div>

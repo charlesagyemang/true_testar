@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'get_quotes/index'
+
   devise_for :testowners
 
   scope "/admin" do

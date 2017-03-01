@@ -3,5 +3,7 @@ class TestownersController < ApplicationController
   def profile
     @testowner = current_testowner
     @tests = @testowner.tests
+
   end
+
 end

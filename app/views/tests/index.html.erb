@@ -1,7 +1,10 @@
-<br /><br />
+
 <div class="container-fluid">
   <%= render 'testowners/ownerdash' %>
-<div class="well_our full">
+  <div class="col-sm-9 ">
+    <br />
+   <div class="bs-callout shade_oneee full">
+
   <div class="container">
     <div class="col-lg-9 col-lg-offset-0 col-sm-12">
       <span class="pull-right">
@@ -37,8 +40,9 @@
         <% end %>
       </div>
     </div>
-  </div>
 
+</div>
+</div>
 
 <%= link_to "Logout",  destroy_company_session_path, :method => :delete %>
 </div>
