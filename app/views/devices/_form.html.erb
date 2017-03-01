@@ -1,41 +1,51 @@
-      <div class="container">
-      	<div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
-                  <legend><i class="glyphicons glyphicons-display"></i> Add A New Device</legend>
-                  <div class="row">
-                      <%= form_for [@context, @device] do |f| %>
-                        <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label      :device_name %>
-                          <%= f.text_field :device_name, class:"form-control", placeholder:"eg. iPhone7 plus" %>
-                        </div>
-                        <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label      :device_type %>
-                          <%= f.select     :device_type, [ "Android Device",
-                                                           "Apple   Device",
-                                                           "Windows Device",
+<!-- <script>
+window.onload = function() {
+ var hangoutButton = document.getElementById("minco");
+ hangoutButton.click()
+};
+</script> -->
 
-                                                          ],
-                                                          class:"form-control"%>
-                        </div>
-                        <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label      "Which Devise?" %>
-                          <%= f.select      :device_os, [ "Phone",
-                                                          "Pc",
-                                                          "Tablet",
-                                                          "Wearable"
+  <div class="container">
+    <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+              <legend><i class="glyphicons glyphicons-display"></i> Edit Device</legend>
+              <div class="row">
+                  <%= form_for [@context, @device] do |f| %>
+                  <% @device.errors.full_messages.each do |msg| %>
+                    <p><%= msg %></p>
+                  <% end %>
+                    <div class="form-group col-xs-12 col-md-12">
+                      <%= f.label      :device_name %>
+                      <%= f.text_field :device_name, class:"form-control", placeholder:"eg. iPhone7 plus", :required => 'required' %>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                      <%= f.label      :device_type %>
+                      <%= f.select     :device_type, [ "Android Device",
+                                                       "Apple   Device",
+                                                       "Windows Device",
 
-                                                          ],
-                                                          class:"form-control" %>
-                        </div>
-                        <div class="form-group col-xs-12 col-md-12">
-                          <%= f.label      "Device OS Version" %>
-                          <%= f.text_field :os_version, class:"form-control" , placeholder:"eg. 10.3" %>
-                        </div>
-                        <div class="form-group col-xs-12 col-md-12">
-                        <%= f.submit class: "btn btn-default" %>
-                       </div>
-                      <% end %>
-                  </div>
+                                                      ],
+                                                      class:"form-control"%>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                      <%= f.label      "Which Device?" %>
+                      <%= f.select      :device_os, [ "Phone",
+                                                      "Pc",
+                                                      "Tablet",
+                                                      "Wearable"
+
+                                                      ],
+                                                      class:"form-control" %>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                      <%= f.label      "Device OS Version" %>
+                      <%= f.text_field :os_version, class:"form-control" , placeholder:"eg. 10.3" %>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                    <%= f.submit class: "btn btn-default" %>
+                   </div>
+                  <% end %>
               </div>
           </div>
       </div>
+  </div>

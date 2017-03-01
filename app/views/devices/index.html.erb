@@ -4,8 +4,13 @@
 <div class="bs-callout bs-callout-danger well_our_two">
   <div class="container">
     <div class="col-lg-9 col-lg-offset-0 col-sm-12">
-      <span class="pull-right">
+      <!-- <span class="pull-right">
         <%= link_to 'Add New Device', new_user_device_path(@user), class: "btn btn-default"%>
+      </span> -->
+
+      <span class="pull-right">
+      <%= link_to "Add A Device","#myModal",
+                  { id:"minco", :class =>'btn btn-default', data: {toggle: "modal"}} %><br />
       </span>
           <h2>Devices You Own</h2>
           <% @devices.each do |dev| %>
@@ -27,3 +32,5 @@
       </div>
     </div>
   </div>
+
+  <%= render 'modality' %>

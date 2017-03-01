@@ -53,7 +53,7 @@ class TestsController < ApplicationController
       params.require(:test).permit(:title,             :instructions,
                                    :start_date,        :end_date,
                                    :review_date,       :review_date,
-                                   :number_of_testers, requirements:[],
-                                   location:[])
+                                   :number_of_testers, :expertise_level,
+                                   requirements:[],    location:[])
     end
 end

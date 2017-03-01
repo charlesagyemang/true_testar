@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224014603) do
+ActiveRecord::Schema.define(version: 20170228232721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170224014603) do
     t.datetime "updated_at",        null: false
     t.string   "location"
     t.integer  "number_of_testers"
+    t.string   "expertise_level"
     t.index ["testable_type", "testable_id"], name: "index_tests_on_testable_type_and_testable_id", using: :btree
   end
 

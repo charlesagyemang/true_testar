@@ -5,6 +5,8 @@ class DevicesController < ApplicationController
     @user = context
     @devices = @user.devices
     @tests = Test.all
+    @context = context
+    @device = @context.devices.new
   end
   def new
     @context = context

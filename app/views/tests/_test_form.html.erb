@@ -89,6 +89,15 @@
                                                         ],  class: "form-control" %>
                   </div>
                   <div class="form-group col-xs-12 col-md-12">
+                    <%= f.label      :expertise_level %>
+                    <%= f.select     :expertise_level, [
+                                                        "Low",
+                                                        "Medium",
+                                                        "High",
+                                                      ], class: "form-control" %>
+
+                  </div>
+                  <div class="form-group col-xs-12 col-md-12">
                     <%= f.label      :instructions %>
                     <%= f.text_area  :instructions, class: "form-control", placeholder:"Test Instructions" %>
 
