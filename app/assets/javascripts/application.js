@@ -22,6 +22,61 @@
 
 $(document).ready(function () {
 
+  function getQuote(testers, numOfRegions, expLevel, testDuration){
+    var finalAnswer  = 0
+    var expertCost   = 1
+    var regionCost   = 1
+    var durationCost = 1
+
+    if (expLevel == "Low"){
+      expertCost = 1
+    }else if (expLevel == "Medium") {
+      expertCost = 2
+    }else if (expLevel == "High") {
+      expertCost = 4
+    }
+
+   if (numOfRegions == 1.5){
+     regionCost = 1.5
+   }else if (numOfRegions == 3) {
+     regionCost = 3
+   }else if (numOfRegions == 4) {
+     regionCost = 4
+   }else if (numOfRegions == 5) {
+    regionCost = 5
+   }
+
+   if (testDuration == 2){
+     regionCost    = 2
+   }else if (testDuration == 4) {
+     durationCost  = 7
+   }else if (testDuration == 6) {
+     durationCost  = 10
+   }else if (testDuration == 7) {
+    durationCost   = 12
+   }
+
+
+  finalAnswer = testers * 10 + ( ( expertCost + regionCost + durationCost) * testers  )
+  return finalAnswer
+
+  }
+  $("#quote").click(function(){
+    $("#cost").show();
+    var number     = $("input[name='optradionum']:checked").val();
+    var experience = $("input[name='optradioexp']:checked").val();
+    var region     = $("input[name='optradioreg']:checked").val();
+    var duration     = $("input[name='optradiodur']:checked").val();
+    var finalQuote = getQuote(number, region, experience, duration)
+     if(number && experience && region && duration){
+        // $(".cost").html("<h1>"   + number     + "</h1>");
+        // $(".cost").append("<h1>" + experience + "</h1>");
+        // $(".cost").append("<h1>" + region     + "</h1>");
+        $(".cost").html("<h1>" + "Total Cost GHC" +  + finalQuote  + "</h1>")
+     } else {
+       $(".cost").html("<h3>"   +"Please fill each option Some fields are empty"    + "</h3>");
+     }
+  })
 
   // $.ajax({
   //       url: 'https://stormy-refuge-52415.herokuapp.com/urls',
