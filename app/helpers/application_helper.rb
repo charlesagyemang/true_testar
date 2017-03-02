@@ -173,4 +173,12 @@ module ApplicationHelper
   		link_recorgnizer(link)
   	end
   end
+
+  def user_location
+    current_user.location.to_s
+  end
+
+  def user_device_type
+    current_user.devices.first.device_type.to_s
+  end
 end

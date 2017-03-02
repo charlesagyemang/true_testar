@@ -23,8 +23,9 @@
                               </div>
                               <div class="form-group col-xs-12 col-md-12">
                                 <%= f.label      :device_type %>
-                                <%= f.select     :device_type, [ "Android Device",
-                                                                 "Apple   Device",
+                                <%= f.select     :device_type, ["Select Type",
+                                                                "Android Device",
+                                                                 "Apple Device",
                                                                  "Windows Device",
 
                                                                 ],
@@ -32,7 +33,8 @@
                               </div>
                               <div class="form-group col-xs-12 col-md-12">
                                 <%= f.label      "Which Device?" %>
-                                <%= f.select      :device_os, [ "Phone",
+                                <%= f.select      :device_os, [ "Select",
+                                                                "Phone",
                                                                 "Pc",
                                                                 "Tablet",
                                                                 "Wearable"

@@ -31,7 +31,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    :userdash_index
+    :userdash_profile
   end
 
   private

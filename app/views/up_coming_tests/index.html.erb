@@ -10,21 +10,30 @@
 
 <%= render 'userdash/sidebar' %>
 
-
 <div class="bs-callout bs-callout-danger well_our_two">
   <div class="col-lg-9">
   <h2><a id="on_going_tester">Up Coming Tests</a></h2>
+
   <hr class="section-heading-spacer">
 </div>
    <div class="row">
        <div class="col-lg-9 col-sm-9">
+         <% if current_user.devices.count > 0 && user_location.to_s.empty? == false %>
           <% @tests.each do |t| %>
-           <% if up_coming(t.start_date) == true %>
-             <h3 class="section-heading"><%=  t.title %> Running From   <%=  t.start_date %> Till   <%=  t.end_date %></h3>
-             <p class="lead">Test Requirements: <strong> <%= t.requirements %></strong><br />
-               Instructions: <br /> <%=t.instructions %>
-               You will get a form to submit your feedback on <strong><%= t.review_date %></strong><br /><br />
-           <% end %>
-         <% end %>
+              <% user_device_type %>
+               <%if t.location == user_location  && (t.requirements.split(", ").include? user_device_type) == true %>
+                <% if up_coming(t.start_date) == true %>
+                  <h3 class="section-heading"><%=  t.title %> Running From   <%=  t.start_date %> Till   <%=  t.end_date %></h3>
+                  <p class="lead">Test Requirements: <strong> <%= t.requirements %></strong><br />
+                    Instructions: <br /> <%=t.instructions %>
+                    You will get a form to submit your feedback on <strong><%= t.review_date %></strong><br /><br />
+                <% end %>
+              <%else %>
+                  <h3><%= "Your Location or Device type disqualifies you from taking this particular test keep calm and wait for the next test that fit your profile" %></h3>
+               <% end %>
+             <% end %>
+             <% else %>
+              <h3>You have No devices set up <%= link_to "see your devices here. ", user_devices_path(@user) %> Please set up your devices to see tests</h3>
+            <% end %>
    </div>
 </div>

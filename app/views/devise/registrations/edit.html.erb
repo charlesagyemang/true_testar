@@ -44,6 +44,7 @@
               <div class="form-group">
                 <%= f.label       :gender %><br />
                 <%= f.select      :gender,        [
+                                                    'Select gender',
                                                     'Male',
                                                     'Female',
                                                    ],  class: "form-control" %>
@@ -52,7 +53,19 @@
 
               <div class="form-group">
                 <%= f.label       :location %><br />
-                <%= f.text_field  :location, autofocus: true, class: "form-control" %>
+                <%= f.select      :location,  [  'Select region',
+                                                 'Greater Accra Region',
+                                                 'Ashanti Region',
+                                                 'Eastern Region',
+                                                 'Northern Region',
+                                                 'Central Region',
+                                                 'Western Region',
+                                                 'Upper East Region',
+                                                 'Upper West Region',
+                                                 'Western Region',
+                                                 'Brong Ahafo Region',
+                                                 'Volta Region',
+                                              ], class: "form-control" %>
               </div>
 
               <div class="form-group">
@@ -88,7 +101,7 @@
 
               <div class="form-group">
                 <%= f.label       :nationality %><br />
-                <%= f.select      :nationality,[
+                <%= f.select      :nationality,[  'Select Country',
                                                   'Afghanistan', 'Akrotiri', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Ashmore and Cartier Islands', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados',
                                                   'Bassas de India', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswanna', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burma', 'Burundi',
                                                   'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Clipperton Island', 'Cocoas (Keeling) Islands', 'Colombia', 'Comoros', 'Congo (Democratic Republic)', 'Congo (Republic)', 'Cook Islands',
@@ -108,18 +121,13 @@
               </div>
 
               <div class="form-group">
-                <%= f.label       :small_bio %><br />
-                <%= f.text_area   :small_bio, autofocus: true, row: 8, class: "form-control" %>
-              </div>
-
-              <div class="form-group">
                 <%= f.label       :date_of_birth %><br />
                 <%= f.date_field  :date_of_birth, autofocus: true, class: "form-control" %>
               </div>
 
               <div class="form-group">
                 <%= f.label      :educational_background %><br />
-                <%= f.select     :educational_background, [
+                <%= f.select     :educational_background, [ 'Select Edu background',
                                                             'No School',
                                                             'JHS Certificate Holder',
                                                             'SHS Certificate Holder',
@@ -132,7 +140,7 @@
 
               <div class="form-group">
                 <%= f.label       :marital_status %><br />
-                <%= f.select      :marital_status,        [
+                <%= f.select      :marital_status,        [ 'Select relationship status',
                                                             'Single',
                                                             'Married',
                                                             'Divorced'
@@ -140,6 +148,10 @@
                                                            ],  class: "form-control" %>
               </div>
 
+              <div class="form-group">
+                <%= f.label       "Tell The community A Little Bout Yourself" %><br />
+                <%= f.text_area   :small_bio, autofocus: true, row: 8, class: "form-control" %>
+              </div>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

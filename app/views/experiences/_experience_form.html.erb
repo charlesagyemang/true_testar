@@ -6,7 +6,8 @@
                 <%= form_for [@context, @experience] do |f| %>
                   <div class="form-group col-xs-12 col-md-12">
                     <%= f.label      :field %>
-                    <%= f.select     :field, [ "Software Testing",
+                    <%= f.select     :field, [ "Select Field",
+                                               "Software Testing",
                                                "Android Development",
                                                "iOS Development",
                                                "Web Development",
@@ -16,7 +17,8 @@
                   </div>
                   <div class="form-group col-xs-12 col-md-12">
                     <%= f.label      :level %>
-                    <%= f.select     :level, [ "Beginner (6 -12 months)",
+                    <%= f.select     :level, [ "Select Level",
+                                               "Beginner (6 -12 months)",
                                                "Intermediate (2 - 3 years)",
                                                "Pro (over 4 years experince)",
                                               ],
