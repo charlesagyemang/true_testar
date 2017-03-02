@@ -33,7 +33,7 @@
                <% end %>
              <% end %>
              <% else %>
-              <h3>You have No devices set up <%= link_to "see your devices here. ", user_devices_path(@user) %> Please set up your devices to see tests</h3>
+              <h3>Please set up <%= link_to "your location ", userdash_profile_path %> and  <%= link_to "add a devise ", user_devices_path(@user) %> as well to be able to be able to view tests</h3>
             <% end %>
    </div>
 </div>
